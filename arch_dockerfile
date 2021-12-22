@@ -1,0 +1,44 @@
+# The container is uses to practise coding.
+
+# Base on Arch Linux
+FROM archlinux
+
+# Creator is me.
+MAINTAINER chensy<chensy.lin@outlook.com>
+
+# Update origin and install common tools.
+RUN pacman -Syu
+RUN pacman -S \
+	net-tools \
+	neovim \
+	git \
+	base-level \
+	intel-ucode \
+	curl \
+	vi \
+	zsh
+
+# Set hostname.
+RUN echo "Arch" > /etc/hostname
+
+#  Add usr and group
+RUN groupadd lin
+RUN useradd -s /bin/zsh -m -g lin chensy
+
+# Install oh-my-zsh
+COPY ./ohmyzsh-install.sh /home/chensy/configureFiles
+RUN sh /home/chensy/configureFiles/ohmyzsh-i.sh
+
+# Copy some configure files.
+COPY config-* /home/chensy/configureFiles/
+
+
+COPY start.sh /usr/local/bin/start.sh
+
+VOLUME ["/home/chensy/extra"]
+
+WORKDIR /home/chensy
+
+USER chensy
+
+CMD ["start.sh"]
