@@ -1,4 +1,33 @@
-# 安装 Rust 和 cargo换源
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh \
-	&& cp /home/chensy/configureFiles/config-cargo /home/chensy/.cargo/config
+myhome="/home/chensy"
+
+function installLangs () {
+	langs=(\
+		'nodejs-lts-gallium' \
+		'yarn' \
+		'lua' \
+		'rust' \
+	)
+
+	installCMD='sudo pacman -S --noconfirm'
+
+	for i in ${langs[*]}
+	do
+		installCMD=$installCMD' '${i}
+	done
+
+	${installCMD}
+}
+
+function moveConfigureFiles () {
+	mv $HOME/configureFiles/config-cargo  $HOME/.cargo/config
+}
+
+installLangs
+
+moveConfigureFiles
+
+
+echo "----------- Done ------------"
+
+
 
