@@ -11,9 +11,6 @@ ENV HOME /home/chensy
 # Add volume.
 VOLUME $HOME/extra
 
-COPY ./config-* $HOME/configureFiles/
-COPY ./start.sh $HOME/start.sh
-
 # add pacman server origin.
 RUN echo "Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist \
 		&& echo "Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist \
@@ -43,6 +40,9 @@ RUN groupadd lin \
 		&& useradd -s /bin/zsh -g lin -m chensy \
 		&& echo "chensy:001993" | chpasswd
 
+COPY ./config-* $HOME/configureFiles/
+COPY ./start.sh $HOME/start.sh
+
 # Manual install oh-my-zsh and plugins.
 RUN cd $HOME \
 		&& git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh \
@@ -52,7 +52,6 @@ RUN cd $HOME \
 
 RUN chmod 775 $HOME/start.sh \
 		&& chown -R chensy:lin $HOME
-		
 
 WORKDIR $HOME
 
