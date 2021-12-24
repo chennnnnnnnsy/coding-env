@@ -5,7 +5,7 @@ function installLangs () {
 		'nodejs-lts-gallium' \
 		'yarn' \
 		'lua' \
-		'rust' \
+		'rustup' \
 	)
 
 	installCMD='sudo pacman -S --noconfirm'
@@ -15,7 +15,7 @@ function installLangs () {
 		installCMD=$installCMD' '${i}
 	done
 
-	${installCMD}
+	${installCMD} && rustup toolchain install stable
 }
 
 function moveConfigureFiles () {
