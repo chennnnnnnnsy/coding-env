@@ -6,39 +6,55 @@ FROM archlinux
 # Creator is me.
 MAINTAINER chensy<chensy.lin@outlook.com>
 
-# Update origin and install common tools.
-RUN pacman -Syu
-RUN pacman -S \
-	net-tools \
-	neovim \
-	git \
-	base-level \
-	intel-ucode \
-	curl \
-	vi \
-	zsh
+ENV HOME /home/chensy
 
-# Set hostname.
+# Add volume.
+VOLUME $HOME/extra
+
+COPY ./config-* $HOME/configureFiles/
+COPY ./start.sh $HOME/start.sh
+
+# add pacman server origin.
+RUN echo "Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist \
+		&& echo "Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist \
+		&& echo "Server = http://mirrors.tuna.tsinghua.edu.cn/archlinuxarm/$arch/$repo" >> /etc/pacman.d/mirrorlist \
+		&& echo "Server = http://mirrors.ustc.edu.cn/archlinuxarm/$arch/$repo" >> /etc/pacman.d/mirrorlist
+
+# Install common tools.
+RUN pacman -Syu --noconfirm \
+		&& pacman -Syy --noconfirm \
+				net-tools \
+				neovim \
+				git \
+				base-devel \
+				intel-ucode \
+				curl \
+				vi \
+				zsh
+
+# Edit hostname.
 RUN echo "Arch" > /etc/hostname
 
-#  Add usr and group
-RUN groupadd lin
-RUN useradd -s /bin/zsh -m -g lin chensy
+#  set passwd for root.
+RUN echo "root:arthurs000" | chpasswd 
 
-# Install oh-my-zsh
-COPY ./ohmyzsh-install.sh /home/chensy/configureFiles
-RUN sh /home/chensy/configureFiles/ohmyzsh-i.sh
+# Create user and group.
+RUN groupadd lin \
+		&& useradd -s /bin/zsh -g lin -m chensy \
+		&& echo "chensy:001993" | chpasswd
 
-# Copy some configure files.
-COPY config-* /home/chensy/configureFiles/
+# Manual install oh-my-zsh and plugins.
+RUN cd $HOME \
+		&& git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh \
+		&& git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
+		&& git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
+		&& cp $HOME/configureFiles/config-zshrc $HOME/.zshrc
 
+RUN chmod 775 $HOME/start.sh \
+		&& chown -R chensy:lin $HOME
+		
 
-COPY start.sh /usr/local/bin/start.sh
-
-VOLUME ["/home/chensy/extra"]
-
-WORKDIR /home/chensy
+WORKDIR $HOME
 
 USER chensy
 
-CMD ["start.sh"]
