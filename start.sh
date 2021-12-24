@@ -19,7 +19,7 @@ function installLangs () {
 }
 
 function moveConfigureFiles () {
-	mv $HOME/configureFiles/config-cargo  $HOME/.cargo/config
+	mkdir $HOME/.cargo && mv $HOME/configureFiles/config-cargo  $HOME/.cargo/config
 }
 
 installLangs
