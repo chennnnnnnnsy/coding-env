@@ -50,10 +50,6 @@ RUN cd $HOME \
 RUN chmod 775 $HOME/start.sh \
 		&& chown -R chensy:lin $HOME
 
-WORKDIR $HOME
-
-USER chensy
-
 # Install programming languages.
 RUN pacman -S --noconfirm \
 			nodejs-lts-gallium \
@@ -64,5 +60,9 @@ RUN pacman -S --noconfirm \
 			python3 \
 			python-pip \
 		&& rustup toolchain install stable
+
+WORKDIR $HOME
+
+USER chensy
 
 CMD ["/bin/zsh"]
