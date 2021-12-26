@@ -1,5 +1,7 @@
 myhome="/home/chensy"
 
+ssh-keygen -C "code.chensy.lin@outlook.com"
+
 function installLangs () {
 	langs=(\
 		'nodejs-lts-gallium' \
@@ -26,8 +28,10 @@ installLangs
 
 moveConfigureFiles
 
+node -v
+yarn -v
+cargo --version
+lua -v
 
 echo "----------- Done ------------"
-
-
 

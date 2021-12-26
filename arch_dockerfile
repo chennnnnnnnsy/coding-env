@@ -11,6 +11,14 @@ ENV HOME /home/chensy
 # Add volume.
 VOLUME $HOME/extra
 
+#  set passwd for root.
+RUN echo "root:arthurs000" | chpasswd 
+
+# Create user and group.
+RUN groupadd lin \
+		&& useradd -s /bin/zsh -g lin -m chensy \
+		&& echo "chensy:001993" | chpasswd
+
 # add pacman server origin.
 RUN echo "Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist \
 		&& echo "Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch" >> /etc/pacman.d/mirrorlist \
@@ -24,21 +32,10 @@ RUN pacman -Syu --noconfirm \
 				neovim \
 				git \
 				base-devel \
-				intel-ucode \
 				curl \
 				vi \
-				zsh
-
-# Edit hostname.
-RUN echo "Arch" > /etc/hostname
-
-#  set passwd for root.
-RUN echo "root:arthurs000" | chpasswd 
-
-# Create user and group.
-RUN groupadd lin \
-		&& useradd -s /bin/zsh -g lin -m chensy \
-		&& echo "chensy:001993" | chpasswd
+				zsh \
+				openssh
 
 COPY ./config-* $HOME/configureFiles/
 COPY ./start.sh $HOME/start.sh
@@ -57,3 +54,14 @@ WORKDIR $HOME
 
 USER chensy
 
+# Install programming languages.
+RUN pacman -S --noconfirm \
+		nodejs-lts-gallium \
+		yarn \
+		lua \
+		rustup \
+		npm \
+		python3 \
+		python-pip
+
+CMD ["/bin/zsh"]
