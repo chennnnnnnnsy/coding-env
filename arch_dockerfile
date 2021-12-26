@@ -56,12 +56,13 @@ USER chensy
 
 # Install programming languages.
 RUN pacman -S --noconfirm \
-		nodejs-lts-gallium \
-		yarn \
-		lua \
-		rustup \
-		npm \
-		python3 \
-		python-pip
+			nodejs-lts-gallium \
+			yarn \
+			lua \
+			rustup \
+			npm \
+			python3 \
+			python-pip \
+		&& rustup toolchain install stable
 
 CMD ["/bin/zsh"]
