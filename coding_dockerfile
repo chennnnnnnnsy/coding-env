@@ -37,18 +37,18 @@ RUN pacman -Syu --noconfirm \
 				zsh \
 				openssh
 
-COPY ./config-* $HOME/configureFiles/
-COPY ./start.sh $HOME/start.sh
-
 # Manual install oh-my-zsh and plugins.
 RUN cd $HOME \
 		&& git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh \
 		&& git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
 		&& git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
-		&& cp $HOME/configureFiles/config-zshrc $HOME/.zshrc
 
-RUN chmod 775 $HOME/start.sh \
-		&& chown -R chensy:lin $HOME
+COPY ./config-* $HOME/configureFiles/
+
+# Copy configure  files to appropriate location.
+RUN cp $HOME/configureFiles/config-zshrc $HOME/.zshrc \
+		&& mkdir $HOME/.cargo \
+		&& cp $HOME/configureFiles/config-cargo  $HOME/.cargo/config
 
 # Install programming languages.
 RUN pacman -S --noconfirm \
@@ -60,6 +60,11 @@ RUN pacman -S --noconfirm \
 			python3 \
 			python-pip \
 		&& rustup toolchain install stable
+
+COPY ./start.sh $HOME/start.sh
+
+RUN chmod 775 $HOME/start.sh \
+		&& chown -R chensy:lin $HOME
 
 WORKDIR $HOME
 

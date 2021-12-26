@@ -21,6 +21,6 @@
 %lin ALL=(ALL) NOPASSWD: ALL
 ```
 
-2. 登录 *chensy* 用户
+2. root用户登出。
 
-3. 执行 `/home/chensy/start.sh`
+3. 执行 `/home/chensy/start.sh`。
