@@ -9,7 +9,7 @@ MAINTAINER chensy<chensy.lin@outlook.com>
 ENV HOME /home/chensy
 
 # Add volume.
-VOLUME $HOME/extra
+# VOLUME $HOME/extra
 
 #  set passwd for root.
 RUN echo "root:arthurs000" | chpasswd 

@@ -24,3 +24,7 @@
 2. root用户登出。
 
 3. 执行 `/home/chensy/start.sh`。
+
+# 遇到的问题
+
+1. 在 *Mac* 上用匿名卷会找不到 *Source Path* 位置。因为启动时指定卷位置。
