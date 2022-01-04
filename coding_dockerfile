@@ -35,7 +35,8 @@ RUN pacman -Syu --noconfirm \
 				curl \
 				vi \
 				zsh \
-				openssh
+				openssh \
+        cmake
 
 # Manual install oh-my-zsh and plugins.
 RUN cd $HOME \
@@ -56,12 +57,13 @@ RUN cp $HOME/configureFiles/config-zshrc $HOME/.zshrc \
 RUN pacman -S --noconfirm \
 			nodejs-lts-gallium \
 			yarn \
-			lua \
-			rustup \
 			npm \
+			lua \
+      luarocks \
+			rustup \
 			python3 \
 			python-pip \
-		&& rustup toolchain install stable
+      jdk8-openjdk
 
 COPY ./start.sh $HOME/start.sh
 
