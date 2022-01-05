@@ -53,17 +53,32 @@ RUN cp $HOME/configureFiles/config-zshrc $HOME/.zshrc \
 		&& mkdir $HOME/.cargo \
 		&& cp $HOME/configureFiles/config-cargo  $HOME/.cargo/config
 
-# Install programming languages.
+# Install programming languages and tools.
 RUN pacman -S --noconfirm \
 			nodejs-lts-gallium \
 			yarn \
 			npm \
 			lua \
       luarocks \
+      lua-language-server \
 			rustup \
+      rust-analyzer \
 			python3 \
 			python-pip \
-      jdk8-openjdk
+      clang \
+		&& rustup toolchain install stable \
+    && luarocks install --server=https://luarocks.org/dev luaformatter
+
+#  Install language servers for neovim lsp.
+RUN yarn add --global \
+      pyright \
+      bash-language-server \
+      @tailwindcss/language-server \
+      svelte-language-server \
+      vls \
+      typescript \
+      typescript-language-server \
+      dockerfile-language-server-nodejs
 
 COPY ./start.sh $HOME/start.sh
 

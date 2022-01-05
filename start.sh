@@ -5,9 +5,6 @@ sudo chown -R  chensy:lin $HOME/extra
 
 ssh-keygen -C "code.chensy.lin@outlook.com"
 
-rustup toolchain install stable
-luarocks install --server=https://luarocks.org/dev luaformatter
-
 echo "ssh 钥匙生成！"
 echo -e "\n"
 
