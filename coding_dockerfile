@@ -69,6 +69,8 @@ RUN pacman -S --noconfirm \
 		&& rustup toolchain install stable \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
+COPY ./start.sh $HOME/start.sh
+
 #  Install language servers for neovim lsp.
 RUN yarn add --global \
       pyright \
@@ -77,10 +79,10 @@ RUN yarn add --global \
       svelte-language-server \
       vls \
       typescript \
-      typescript-language-server \
-      dockerfile-language-server-nodejs
+      typescript-language-server
 
-COPY ./start.sh $HOME/start.sh
+RUN mkdir $HOME/.config \
+    && git clone https://github.com/chennnnnnnnsy/vim-config.git $HOME/.config/nvim
 
 RUN chmod 775 $HOME/start.sh \
 		&& chown -R chensy:lin $HOME
