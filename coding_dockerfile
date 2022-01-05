@@ -36,15 +36,14 @@ RUN pacman -Syu --noconfirm \
 				vi \
 				zsh \
 				openssh \
-        cmake
+        cmake \
+        ripgrep
 
 # Manual install oh-my-zsh and plugins.
 RUN cd $HOME \
 		&& git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh \
 		&& git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
 		&& git clone https://github.com/mfaerevaag/wd.git $HOME/.oh-my-zsh/custom/plugins/wd
-
-
 
 COPY ./config-* $HOME/configureFiles/
 
@@ -71,15 +70,6 @@ RUN pacman -S --noconfirm \
 
 COPY ./start.sh $HOME/start.sh
 
-#  Install language servers for neovim lsp.
-RUN yarn add --global \
-      pyright \
-      bash-language-server \
-      @tailwindcss/language-server \
-      svelte-language-server \
-      vls \
-      typescript \
-      typescript-language-server
 
 RUN mkdir $HOME/.config \
     && git clone https://github.com/chennnnnnnnsy/vim-config.git $HOME/.config/nvim
@@ -90,5 +80,17 @@ RUN chmod 775 $HOME/start.sh \
 WORKDIR $HOME
 
 USER chensy
+
+#  Install language servers for neovim lsp.
+RUN yarn add --global \
+      pyright \
+      bash-language-server \
+      @tailwindcss/language-server \
+      svelte-language-server \
+      vls \
+      typescript \
+      typescript-language-server \
+      vscode-langservers-extracted \
+      prettier
 
 CMD ["/bin/zsh"]
