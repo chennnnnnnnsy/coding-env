@@ -70,27 +70,16 @@ RUN pacman -S --noconfirm \
 
 COPY ./start.sh $HOME/start.sh
 
-
 RUN mkdir $HOME/.config \
     && git clone https://github.com/chennnnnnnnsy/vim-config.git $HOME/.config/nvim
 
 RUN chmod 775 $HOME/start.sh \
 		&& chown -R chensy:lin $HOME
 
+EXPOSE 8080 8081 9090 9091 3306
+
 WORKDIR $HOME
 
 USER chensy
-
-#  Install language servers for neovim lsp.
-RUN yarn add --global \
-      pyright \
-      bash-language-server \
-      @tailwindcss/language-server \
-      svelte-language-server \
-      vls \
-      typescript \
-      typescript-language-server \
-      vscode-langservers-extracted \
-      prettier
 
 CMD ["/bin/zsh"]
