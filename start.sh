@@ -8,6 +8,7 @@ ssh-keygen -C "code.chensy.lin@outlook.com"
 echo "ssh 钥匙生成！"
 echo -e "\n"
 
+# 安装neovim的语言服务器
 yarn global add pyright bash-language-server @tailwindcss/language-server svelte-language-server vls typescript typescript-language-server vscode-langservers-extracted prettier
 
 echo -e  "\n"
