@@ -37,20 +37,14 @@ RUN pacman -Syu --noconfirm \
 				zsh \
 				openssh \
         cmake \
-        ripgrep
+        ripgrep \
+        tmux
 
 # Manual install oh-my-zsh and plugins.
 RUN cd $HOME \
 		&& git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh \
 		&& git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting \
 		&& git clone https://github.com/mfaerevaag/wd.git $HOME/.oh-my-zsh/custom/plugins/wd
-
-COPY ./config-* $HOME/configureFiles/
-
-# Copy configure  files to appropriate location.
-RUN cp $HOME/configureFiles/config-zshrc $HOME/.zshrc \
-		&& mkdir $HOME/.cargo \
-		&& cp $HOME/configureFiles/config-cargo  $HOME/.cargo/config
 
 # Install programming languages and tools.
 RUN pacman -S --noconfirm \
@@ -68,15 +62,22 @@ RUN pacman -S --noconfirm \
 		&& rustup toolchain install stable \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
-COPY ./start.sh $HOME/start.sh
+# # Copy configure  files to appropriate location.
+# COPY ../.cargo $HOME/.cargo
+# COPY ../.zshrc $HOME/.zshrc
+# COPY ./run_start.sh $HOME/run_start.sh
+#
+# RUN git clone https://github.com/chennnnnnnnsy/codingBydocker.git $HOME \
+#     && mkdir $HOME/.config \
+#     && cd 
+#
+# RUN mkdir $HOME/.config \
+#     && git clone https://github.com/chennnnnnnnsy/vim-config.git $HOME/.config/nvim
+# RUN chmod 775 $HOME/start.sh \
 
-RUN mkdir $HOME/.config \
-    && git clone https://github.com/chennnnnnnnsy/vim-config.git $HOME/.config/nvim
+RUN	chown -R chensy:lin $HOME
 
-RUN chmod 775 $HOME/start.sh \
-		&& chown -R chensy:lin $HOME
-
-EXPOSE 8080 8081 9090 9091 3306
+EXPOSE 8080 8081 9090 9091
 
 WORKDIR $HOME
 
