@@ -1,6 +1,4 @@
-# codingBydocker
-
-自定义的 _docker_ 镜像，基于 _archlinux_ 。安装了常用的工具和包，并且创建了 _chensy_ 用户和 _lin_ 用户组。
+# 这份旧的**README**！！！
 
 # 初次进入系统的配置
 
@@ -17,4 +15,4 @@
 
 # 遇到的问题
 
-1. 在 _Mac_ 上用匿名卷会找不到 _Source Path_ 位置。因为启动时指定卷位置。
+1. _Dockerfile_ 生成的镜像运行时在 _Mac_ 上用匿名卷会找不到 _Source Path_ 位置。因为启动时指定卷位置。
