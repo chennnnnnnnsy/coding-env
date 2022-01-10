@@ -18,8 +18,7 @@ yarn global add \
         typescript \
         typescript-language-server \
         vscode-langservers-extracted \
-        prettier \
-        prettier-plugin-svelte
+        prettier
 
 echo -e  "\n"
 echo "----------- 初始化完成！------------"
