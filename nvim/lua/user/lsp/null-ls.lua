@@ -7,9 +7,14 @@ null_ls.setup({
   sources = {
     formatting.clang_format, -- c/c++
     formatting.rustfmt, -- rust
-    formatting.prettier, -- 前端那一套
-    formatting.lua_format.with({extra_args = {'--indent-width=2', '--tab-width=2', '--no-use-tab'}}), -- lua
-    null_ls.builtins.code_actions.gitsigns,
+    formatting.prettier.with({
+      extra_filetypes = {"svelte"},
+      extra_args = {"--plugin-search-dir=."}
+    }), -- 前端那一套
+    formatting.lua_format.with({
+      extra_args = {'--indent-width=2', '--tab-width=2', '--no-use-tab'}
+    }), -- lua
+    null_ls.builtins.code_actions.gitsigns
   }
   -- 保存就格式化
   -- on_attach = function(client)
