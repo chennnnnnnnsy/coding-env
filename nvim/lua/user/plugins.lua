@@ -33,6 +33,7 @@ packer.init({
 return packer.startup(function(use)
   use('wbthomason/packer.nvim') -- 安装自身都可以
 
+  use("nvim-lua/popup.nvim")    -- neovim的弹窗接口实现,telescope用到
   use("nvim-lua/plenary.nvim") -- 一个lua的工具库，含各种lua的封装好的实用函数。
   use("lewis6991/impatient.nvim") -- 加快打开nvim速度，因为用到了缓存
 
