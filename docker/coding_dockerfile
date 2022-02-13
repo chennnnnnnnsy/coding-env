@@ -62,8 +62,6 @@ RUN pacman -S --noconfirm \
 		&& rustup toolchain install stable \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
-COPY ./run_start.sh $HOME/run_start.sh
-
 RUN mkdir $HOME/.config \
 	&& chmod 775 $HOME/run_start.sh \
 	&& chown -R chensy:lin $HOME
