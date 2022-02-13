@@ -63,7 +63,6 @@ RUN pacman -S --noconfirm \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
 RUN mkdir $HOME/.config \
-	&& chmod 775 $HOME/run_start.sh \
 	&& chown -R chensy:lin $HOME
 
 EXPOSE 8080 8081 9090 9091
