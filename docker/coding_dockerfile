@@ -62,9 +62,6 @@ RUN pacman -S --noconfirm \
 		&& rustup toolchain install stable \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
-# Copy configure  files to appropriate location.
-COPY ../.cargo $HOME/.cargo
-COPY ../.zshrc $HOME/.zshrc
 COPY ./run_start.sh $HOME/run_start.sh
 
 RUN mkdir $HOME/.config \

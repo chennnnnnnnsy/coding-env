@@ -6,8 +6,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
   local origin_github_path = 'https://github.com/wbthomason/packer.nvim'
   local speed_github_path = 'https://github.com.cnpmjs.org/wbthomason/packer.nvim.git'
   PACKER_BOOTSTRAP = fn.system({
-    'git', 'clone', '--depth', '1', -- origin_github_path,
-    speed_github_path, install_path
+    'git', 'clone', '--depth', '1',
+    origin_github_path,
+    --speed_github_path,
+    install_path
   })
 
   print('Installing packer close and reopen Neovim...')
