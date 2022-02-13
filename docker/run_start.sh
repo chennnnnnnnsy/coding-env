@@ -1,7 +1,7 @@
 echo "---------- 开始初始化 ----------"
 echo -e "\n"
 
-# sudo chown -R  chensy:lin $HOME/extra
+sudo chown -R  chensy:lin $HOME/codes
 
 ssh-keygen -C "code.chensy.lin@outlook.com"
 
@@ -19,6 +19,8 @@ yarn global add \
         typescript-language-server \
         vscode-langservers-extracted \
         prettier
+
+ln -s  $HOME/codes/coding-env/nvim $HOME/.config/nvim
 
 echo -e  "\n"
 echo "----------- 初始化完成！------------"

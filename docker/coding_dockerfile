@@ -62,20 +62,14 @@ RUN pacman -S --noconfirm \
 		&& rustup toolchain install stable \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
-# # Copy configure  files to appropriate location.
-# COPY ../.cargo $HOME/.cargo
-# COPY ../.zshrc $HOME/.zshrc
-# COPY ./run_start.sh $HOME/run_start.sh
-#
-# RUN git clone https://github.com/chennnnnnnnsy/codingBydocker.git $HOME \
-#     && mkdir $HOME/.config \
-#     && cd 
-#
-# RUN mkdir $HOME/.config \
-#     && git clone https://github.com/chennnnnnnnsy/vim-config.git $HOME/.config/nvim
-# RUN chmod 775 $HOME/start.sh \
+# Copy configure  files to appropriate location.
+COPY ../.cargo $HOME/.cargo
+COPY ../.zshrc $HOME/.zshrc
+COPY ./run_start.sh $HOME/run_start.sh
 
-RUN	chown -R chensy:lin $HOME
+RUN mkdir $HOME/.config \
+	&& chmod 775 $HOME/run_start.sh \
+	&& chown -R chensy:lin $HOME
 
 EXPOSE 8080 8081 9090 9091
 
