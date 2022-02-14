@@ -28,7 +28,7 @@ packer.init({
     end
   },
   -- 国内访问github总是443，只能配置以下
-  git = {default_url_format = 'https://github.com.cnpmjs.org/%s.git'}
+  -- git = {default_url_format = 'https://github.com.cnpmjs.org/%s.git'}
 })
 
 -- Install plugins
