@@ -3,6 +3,7 @@ echo -e "\n"
 
 git config --global user.name "chensy"
 git config --global user.email "code.chensy.lin@outlook.com"
+git config --global core.ignorecase false
 
 sudo chown -R  chensy:lin $HOME/codes
 
