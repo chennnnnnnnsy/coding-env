@@ -131,6 +131,7 @@ local mappings = {
     R = {cmd("lua require 'gitsigns'.reset_buffer()"), "Reset Buffer"},
     u = {cmd("lua require 'gitsigns'.undo_stage_hunk()"), "Undo Stage Hunk"},
     s = {cmd("lua require 'gitsigns'.stage_hunk()"), "Stage Hunk"},
+    S = {cmd("lua require 'gitsigns'.stage_buffer()"), "Stage Buffer"},
     o = {cmd("Telescope git_status"), "Open changed file"},
     b = {cmd("Telescope git_branches"), "Checkout branch"},
     c = {cmd("Telescope git_commits"), "Checkout commit"},
