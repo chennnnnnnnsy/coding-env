@@ -7,8 +7,9 @@ local handles = require('user/lsp/handlers')
 handles.set_config()
 
 local server_list = {
-  "tailwindcss", "svelte", "vuels", "tsserver", "bashls", "pyright", "rust_analyzer", "sumneko_lua",
-  "clangd", "eslint"
+  "tailwindcss", "svelte", "vuels", "tsserver", "bashls",  "sumneko_lua",
+  "clangd", "eslint",
+-- "pyright", "rust_analyzer",
 }
 
 for _, server in ipairs(server_list) do
