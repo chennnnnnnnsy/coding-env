@@ -108,7 +108,7 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export http_proxy=http://127.0.0.1:8888
 export https_proxy=http://127.0.0.1:8888
 
-export NVM_DIR="/home/chensy/.nvm"
+export NVM_DIR="/Users/chensy/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
