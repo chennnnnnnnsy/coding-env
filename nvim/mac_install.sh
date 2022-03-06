@@ -1,3 +1,4 @@
+# 安装neovim的语言服务器
 yarn global add \
         bash-language-server \
         @tailwindcss/language-server \
