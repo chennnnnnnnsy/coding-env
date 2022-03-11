@@ -16,7 +16,7 @@ volumes 可以设置多个。
 注意：版本号需要写对
 
 ```bash
-docker run -itd --privileged -P --name coding \
+docker run -it -P --name coding \
       -v 宿主机的绝对路径:容器的绝对路径 \
       coding:x.x.x
 ```
@@ -40,12 +40,15 @@ docker exec -it coding:x.x.x
 
 2. root 用户登出。
 
+3. 执行当前项目 *docker/run_start.sh*
+
 3. 更新资源、工具。```sudo pacman -Syyu --noconfirm```
 
 ## 遇到的问题
 
 1. _Dockerfile_ 生成的镜像运行时在 _Mac_ 上用匿名卷会找不到 _Source Path_ 位置。因为启动时指定卷位置。
 2. Docker 遇到一个 systemctl 用不了的问题，解决办法docker创建容器时开启特权模式。[解决方法](https://blog.csdn.net/zhangyuhaifa/article/details/119756642).
+3. Docker 特权模式在MacOS 有问题。而且开启不了 systemctl 。
 
 # Neovim
 
@@ -55,7 +58,7 @@ lua + packer + nvim-lsp-config + nvim-treesisster
 
 用到了 **Neovim** 内置的 **LSP**，因此需要手动安装语言服务。
 
-~~ - _pyright_ ~~
+~~- _pyright_~~
 - _bash-language-server_
 - _@tailwindcss/language-server_
 - _svelte-language-server_

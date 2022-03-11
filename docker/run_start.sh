@@ -1,5 +1,5 @@
 # 启动 systemctl
-/usr/sbin/init
+# /usr/sbin/init
 
 echo "---------- 开始初始化 ----------"
 echo -e "\n"
@@ -30,10 +30,10 @@ yarn global add \
         prettier
 
 ln -s $HOME/codes/coding-env/nvim $HOME/.config/nvim
-ln -s $HOME/codes/coding-env/.zshrc $HOME/.zshrc
+cp $HOME/codes/coding-env/.zshrc $HOME/.zshrc
 ln -s $HOME/codes/coding-env/.cargo $HOME/.cargo
 
 echo -e  "\n"
 echo "----------- 初始化完成！------------"
 
-exec "$@"
+# exec "$@"
