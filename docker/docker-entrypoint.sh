@@ -1,3 +1,6 @@
+# 启动 systemctl
+/usr/sbin/init
+
 echo "---------- 开始初始化 ----------"
 echo -e "\n"
 
@@ -8,9 +11,10 @@ git config --global core.ignorecase false
 # 如果太多文件，这一步会等很久
 # sudo chown -R  chensy:lin $HOME/codes
 
-ssh-keygen -C "code.chensy.lin@outlook.com"
+# 不用生成这个，在宿主容器生成就行
+# ssh-keygen -C "code.chensy.lin@outlook.com"
+# echo "ssh 钥匙生成！"
 
-echo "ssh 钥匙生成！"
 echo -e "\n"
 
 # 安装neovim的语言服务器
@@ -32,3 +36,4 @@ ln -s $HOME/codes/coding-env/.cargo $HOME/.cargo
 echo -e  "\n"
 echo "----------- 初始化完成！------------"
 
+exec "$@"

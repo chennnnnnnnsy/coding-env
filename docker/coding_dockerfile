@@ -26,8 +26,8 @@ RUN echo "Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 		&& echo "Server = http://mirrors.ustc.edu.cn/archlinuxarm/$arch/$repo" >> /etc/pacman.d/mirrorlist
 
 # Install common tools.
-RUN pacman -Syu --noconfirm \
-		&& pacman -Syy --noconfirm \
+RUN pacman -Syu --noconfirm --disable-download-timeout --gpgdir \
+		&& pacman -Syy --noconfirm  --disable-download-timeout  --gpgdir \
 				net-tools \
 				neovim \
 				git \
@@ -47,7 +47,7 @@ RUN cd $HOME \
 		&& git clone https://github.com/mfaerevaag/wd.git $HOME/.oh-my-zsh/custom/plugins/wd
 
 # Install programming languages and tools.
-RUN pacman -S --noconfirm \
+RUN pacman -S --noconfirm  --disable-download-timeout --gpgdir \
 			nodejs-lts-gallium \
 			yarn \
 			npm \
@@ -62,8 +62,11 @@ RUN pacman -S --noconfirm \
 		&& rustup toolchain install stable \
     && luarocks install --server=https://luarocks.org/dev luaformatter
 
-RUN mkdir $HOME/.config \
-	&& chown -R chensy:lin $HOME
+COPY ./docker-entrypoint.sh $HOME/docker-entrypoint.sh
+
+RUN chmod 775 $HOME/docker-entrypoint.sh \
+    mkdir $HOME/.config \
+    && chown -R chensy:lin $HOME
 
 EXPOSE 8080 8081 9090 9091
 
@@ -71,4 +74,7 @@ WORKDIR $HOME
 
 USER chensy
 
-CMD ["/bin/zsh"]
+# 启动容器会启动 systemctl
+ENTRYPOINT ["$HOME/docker-entrypoint.sh"]
+
+CMD ['/bin/zsh']
