@@ -105,8 +105,9 @@ export PATH=`yarn global bin`:/usr/local/opt/llvm/bin:$JAVA_HOME/bin:$PATH
 export CLASS_PATH=$JAVA_HOME/lib
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
  
-export http_proxy=http://127.0.0.1:8888
 export https_proxy=http://127.0.0.1:8888
+export http_proxy=http://127.0.0.1:8888
+export all_proxy=socks5://127.0.0.1:8889
 
 export NVM_DIR="/Users/chensy/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
