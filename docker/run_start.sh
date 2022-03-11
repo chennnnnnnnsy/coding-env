@@ -5,7 +5,8 @@ git config --global user.name "chensy"
 git config --global user.email "code.chensy.lin@outlook.com"
 git config --global core.ignorecase false
 
-sudo chown -R  chensy:lin $HOME/codes
+# 如果太多文件，这一步会等很久
+# sudo chown -R  chensy:lin $HOME/codes
 
 ssh-keygen -C "code.chensy.lin@outlook.com"
 
