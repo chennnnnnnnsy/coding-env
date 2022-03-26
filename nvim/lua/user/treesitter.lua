@@ -3,15 +3,18 @@ if not status_ok then return end
 
 configs.setup {
   ensure_installed = {
-    "c", "cpp", "lua", "bash", "python", "typescript", "javascript", "rust", "html", "json", "java",
-    "css", "scss", "svelte", "vim", "vue"
+    "c", "cpp", "lua", "bash", "python", "typescript", "javascript", "rust",
+    "html", "json", "java", "css", "scss", "svelte", "vim", "vue"
   },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = {""}, -- List of parsers to ignore installing
   autopairs = {enable = true},
   autotag = {
     enable = true,
-    filetypes = {'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue'}
+    filetypes = {
+      'html', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte',
+      'vue'
+    }
   },
   highlight = {
     enable = true, -- false will disable the whole extension
@@ -23,5 +26,5 @@ configs.setup {
     enable = true,
     enable_autocmd = false
   },
-  rainbow = {enable = true, extended_mode = true, max_file_lines = 1000}
+  rainbow = {enable = true, extended_mode = true, max_file_lines = 1000},
 }
