@@ -119,7 +119,7 @@ local mappings = {
     p = {cmd("Telescope projects"), "Projects"},
     r = {cmd("Telescope oldfiles"), "Open Recent File"},
     b = {cmd("Telescope buffers"), "Find Buffers"},
-    m = {cmd("TodoTelescope"), "Find Todo Comments"}
+    m = {cmd("TODOTelescope"), "Find Todo Comments"}
   },
   g = {
     name = "Git",

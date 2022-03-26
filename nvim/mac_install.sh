@@ -7,7 +7,12 @@ yarn global add \
         typescript \
         typescript-language-server \
         vscode-langservers-extracted \
-        prettier 
+        prettier
         # pyright \
 
-brew install llvm  lua-language-server
+brew update && brew install llvm  lua-language-server luarocks cmake
+
+# 主要用在nvim的项目中全局搜索
+brew install ripgrep
+
+luarocks install --server=https://luarocks.org/dev luaformatter

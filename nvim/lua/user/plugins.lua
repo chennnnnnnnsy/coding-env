@@ -4,11 +4,10 @@ local install_path = fn.stdpath('data') .. "/site/pack/packer/start/packer.nvim"
 -- Automatically install packer
 if fn.empty(fn.glob(install_path)) > 0 then
   local origin_github_path = 'https://github.com/wbthomason/packer.nvim'
-  local speed_github_path = 'https://github.com.cnpmjs.org/wbthomason/packer.nvim.git'
+  local speed_github_path =
+      'https://github.com.cnpmjs.org/wbthomason/packer.nvim.git'
   PACKER_BOOTSTRAP = fn.system({
-    'git', 'clone', '--depth', '1',
-    origin_github_path,
-    --speed_github_path,
+    'git', 'clone', '--depth', '1', origin_github_path, -- speed_github_path,
     install_path
   })
 
@@ -26,7 +25,7 @@ packer.init({
     open_fn = function()
       return require("packer.util").float({border = "single"}) -- 弹窗，设置边框
     end
-  },
+  }
   -- 国内访问github总是443，只能配置以下
   -- git = {default_url_format = 'https://github.com.cnpmjs.org/%s.git'}
 })
@@ -35,7 +34,7 @@ packer.init({
 return packer.startup(function(use)
   use('wbthomason/packer.nvim') -- 安装自身都可以
 
-  use("nvim-lua/popup.nvim")    -- neovim的弹窗接口实现,telescope用到
+  use("nvim-lua/popup.nvim") -- neovim的弹窗接口实现,telescope用到
   use("nvim-lua/plenary.nvim") -- 一个lua的工具库，含各种lua的封装好的实用函数。
   use("lewis6991/impatient.nvim") -- 加快打开nvim速度，因为用到了缓存
 
@@ -46,7 +45,10 @@ return packer.startup(function(use)
 
   -- neovim 的界面美化
   use("kyazdani42/nvim-web-devicons") -- 文件图标
-  use({'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}) -- 状态行
+  use({
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }) -- 状态行
   use({'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}) -- 顶部buffer状态行
   use({'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}) -- 文件管理器，就是侧边菜单
   use("lukas-reineke/indent-blankline.nvim") -- 优美地显示tab和缩进
@@ -55,7 +57,6 @@ return packer.startup(function(use)
   use('karb94/neoscroll.nvim') -- 德芙般丝滑滚动
   use("folke/which-key.nvim") -- 查看快捷键
   use("akinsho/toggleterm.nvim") -- 终端集成器
-  -- use({ "rcarriga/nvim-notify", config = function() require("notify").setup({ background_colour = "#000000", stages = "slide", }) end, })
 
   -- 文本编辑用到的
   use("kevinhwang91/nvim-hlslens") -- 搜索的结果可以知道有多少个
@@ -70,6 +71,7 @@ return packer.startup(function(use)
 
   -- 代码注释插件
   use('numToStr/Comment.nvim') -- 代码注释
+  use("AmeerTaweel/todo.nvim") -- todo 注释会高亮，而且可以搜索
   use 'JoosepAlviste/nvim-ts-context-commentstring' -- 根据treesitter检查当前光标所在行的文本类型，进行注释。注：与Comment.nvim 配合使用.
 
   -- 补全插件
@@ -80,7 +82,6 @@ return packer.startup(function(use)
   use('hrsh7th/nvim-cmp') -- 补全引擎，需要另外添加source
   use("lukas-reineke/cmp-under-comparator") -- 提示的补全更好地排序
   use("saadparwaiz1/cmp_luasnip") -- 把LuaSnip加载的代码片段生成source.
-  -- use({ "tzachar/cmp-tabnine", run = "./install.sh" })    -- 出名的tabnine补全，不知道占内存大不？先不用
 
   -- 代码片段插件
   use("rafamadriz/friendly-snippets") -- 代码片段集合, 用LuaSnip加载它们
@@ -94,7 +95,6 @@ return packer.startup(function(use)
   -- 模糊搜索插件
   use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}) -- 模糊搜索的插件，高性能排序
   use("ahmedkhalf/project.nvim") -- 与telescope集成，搜索项目
-  use("nvim-telescope/telescope-media-files.nvim") -- 图片可视化
   use({
     "crispgm/telescope-heading.nvim",
     ft = "markdown",
