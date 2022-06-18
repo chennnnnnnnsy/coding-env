@@ -66,4 +66,7 @@ lua + packer + nvim-lsp-config + nvim-treesisster
 - _typescript && typescript-language-server_
 - _clang_
 - _lua-language-server_
+- _vscode-langservers-extracted_
+- _prettier_
+- _cssmodules-language-server_
 ~~ - _rust-analyzer_ ~~
