@@ -1,3 +1,4 @@
-vim.cmd([[
-  colorscheme dracula
-]])
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  command = "colorscheme dracula"
+})
