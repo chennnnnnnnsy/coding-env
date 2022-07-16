@@ -1,11 +1,11 @@
-vim.cmd([[
-  augroup illuminate_augroup
-    autocmd!
-    autocmd VimEnter * hi illuminatedWord cterm=undercurl gui=undercurl
-  augroup END
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = '*',
+  group = 'illuminate_augroup',
+  command = 'hi illuminatedWord cterm=undercurl gui=undercurl'
+})
 
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = 'plugins.lua',
+  group = 'packer_user_config',
+  command = 'source <afile> | PackerSync'
+})
