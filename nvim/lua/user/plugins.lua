@@ -62,7 +62,7 @@ return packer.startup(function(use)
   use("kevinhwang91/nvim-hlslens") -- 搜索的结果可以知道有多少个
   use('famiu/bufdelete.nvim') -- 优雅地删除buffer
   use("RRethy/vim-illuminate") -- 光标所在词，在全文都高亮
-  use("ur4ltz/surround.nvim") -- 加入、替换、删除一些单引号、双引号、括号等
+  use("machakann/vim-sandwich") -- 加入、替换、删除一些单引号、双引号、括号等
   use({'mg979/vim-visual-multi', branch = "master"}) -- 多光标
   use('gcmt/wildfire.vim') -- 回车可以选择闭合标签里面的内容
 
