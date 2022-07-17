@@ -1,3 +1,8 @@
+" if empty(glob('~/.config/nvim/autoload/plug.vim'))
+"     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
+
 " 基础属性配置
 set expandtab " 用spaces代替tabs
 set shiftwidth=2 " 个缩进都插入x个空格
@@ -39,6 +44,13 @@ set splitbelow " 上下分割屏幕都在下面
 set list " 示隐藏的字符
 set listchars=tab:··,trail:▫ " 隐藏的字符对应显示什么字符
 
+" 插件
+" call plug#begin('~/.config/nvim/autoload/')
+  " Plug 'machakann/vim-sandwich'
+  " Plug 'tpope/vim-commentary'
+  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" call plug#end()
+
 " 快捷键映射
 let mapleader=" "
 let maplocalleader=" "
@@ -54,28 +66,23 @@ nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> <Tab> <Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>
 nnoremap <silent> <S-Tab> <Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>
-
-nnoremap <silent> gcc <Cmd>call VSCodeNotify('editor.action.commentLine')<CR>
-
 nnoremap <LEADER>n :noh<CR>
 nnoremap <LEADER>d <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 nnoremap <LEADER>e <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
-
 nnoremap <LEADER>fg <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
 nnoremap <LEADER>fm <Cmd>call VSCodeNotify('todo-tree-view.focus')<CR>
 nnoremap <LEADER>ff <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
-
 nnoremap <LEADER>lk <Cmd>call VSCodeNotify('editor.action.showHover')<CR>
 nnoremap <LEADER>lf <Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
 nnoremap <LEADER>lt <Cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>
 nnoremap <LEADER>ld <Cmd>call VSCodeNotify('workbench.panel.markers.view.focus')<CR>
 nnoremap <LEADER>lq <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
-
 nnoremap <LEADER>gd <Cmd>call VSCodeNotify('git.timeline.openDiff')<CR>
 
-
-
-
+xmap gc  <Plug>VSCodeCommentary
+nmap gc  <Plug>VSCodeCommentary
+omap gc  <Plug>VSCodeCommentary
+nmap gcc <Plug>VSCodeCommentaryLine
 
 
 
