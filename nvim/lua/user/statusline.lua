@@ -12,7 +12,7 @@ local diagnostics = {
   update_in_insert = false,
   always_visible = true
 }
-
+   
 local diff = {
   "diff",
   colored = false,
