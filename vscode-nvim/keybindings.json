@@ -46,4 +46,14 @@
     "when": "neovim.mode == normal && editorFocus",
     "args": "i+ctrl+n"
   },
+  {
+    "key": "z c",
+    "command": "editor.fold",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "z O",
+    "command": "editor.unfold",
+    "when": "editorTextFocus && foldingEnabled"
+  }
 ]
