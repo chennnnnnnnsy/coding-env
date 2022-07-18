@@ -65,6 +65,8 @@ nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> <Tab> <Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>
 nnoremap <silent> <S-Tab> <Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>
+nnoremap <silent> zc <Cmd>call VSCodeNotify('editor.fold')<CR>
+nnoremap <silent> zO <Cmd>call VSCodeNotify('editor.unfold')<CR>
 nnoremap <LEADER>n :noh<CR>
 nnoremap <LEADER>d <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 nnoremap <LEADER>e <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
