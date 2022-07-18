@@ -49,11 +49,11 @@
   {
     "key": "z c",
     "command": "editor.fold",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "neovim.mode == normal && editorTextFocus && foldingEnabled"
   },
   {
     "key": "z shift+o",
     "command": "editor.unfold",
-    "when": "editorTextFocus && foldingEnabled"
+    "when": "neovim.mode == normal && editorTextFocus && foldingEnabled"
   }
 ]
