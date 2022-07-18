@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "vscode-neovim.neovimExecutablePaths.win32": "D:\\MyData\\ex_lincx3\\scoop\\shims\\nvim.exe",
+    "vscode-neovim.neovimInitVimPaths.win32": "D:\\MyData\\ex_lincx3\\Documents\\coding-env\\vscode-nvim\\init.vim",
+    "editor.fontSize": 16,
+    "editor.tabSize": 2,
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.showReleaseNotes": false,
+    "update.mode": "none",
+    "editor.lineNumbers": "relative"
+}

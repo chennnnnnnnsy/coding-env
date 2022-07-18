@@ -1,9 +1,9 @@
-" if empty(glob('~/.config/nvim/autoload/plug.vim'))
-"     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
+if empty(glob('D:\MyData\ex_lincx3\AppData\Local\nvim\autoload\plug.vim'))
+   silent !curl -fLo D:\MyData\ex_lincx3\AppData\Local\nvim\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" 基础属性配置
+" 基础属性置
 set expandtab " 用spaces代替tabs
 set shiftwidth=2 " 个缩进都插入x个空格
 set tabstop=2 " x个空格代替1个tab
@@ -45,11 +45,10 @@ set list " 示隐藏的字符
 set listchars=tab:··,trail:▫ " 隐藏的字符对应显示什么字符
 
 " 插件
-" call plug#begin('~/.config/nvim/autoload/')
-  " Plug 'machakann/vim-sandwich'
-  " Plug 'tpope/vim-commentary'
-  " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" call plug#end()
+call plug#begin('D:\MyData\ex_lincx3\AppData\Local\nvim\autoload')
+  Plug 'machakann/vim-sandwich'
+  Plug 'gcmt/wildfire.vim'
+call plug#end()
 
 " 快捷键映射
 let mapleader=" "
@@ -83,10 +82,3 @@ xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
 nmap gcc <Plug>VSCodeCommentaryLine
-
-
-
-
-
-
-
