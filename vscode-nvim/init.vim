@@ -58,7 +58,7 @@ noremap <silent> s <Nop>
 nnoremap ; :
 nnoremap <silent> W <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
 nnoremap <silent> Q <Cmd>call VSCodeNotify('workbench.action.quit')<CR>
-nnoremap sl :vsplit<CR>
+nnoremap sl <Cmd>call VSCodeNotify('workbench.action.splitEditorRight')<CR>
 nnoremap <silent> P "+p
 vnoremap <silent> Y "+y
 nnoremap <silent> n nzz
@@ -69,7 +69,7 @@ nnoremap <silent> zc <Cmd>call VSCodeNotify('editor.fold')<CR>
 nnoremap <silent> zO <Cmd>call VSCodeNotify('editor.unfold')<CR>
 nnoremap <LEADER>n :noh<CR>
 nnoremap <LEADER>d <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
-nnoremap <LEADER>e <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
+nnoremap <LEADER>e <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR><Cmd>call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
 nnoremap <LEADER>fg <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
 nnoremap <LEADER>fm <Cmd>call VSCodeNotify('todo-tree-view.focus')<CR>
 nnoremap <LEADER>ff <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
@@ -78,7 +78,7 @@ nnoremap <LEADER>lf <Cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
 nnoremap <LEADER>lt <Cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>
 nnoremap <LEADER>ld <Cmd>call VSCodeNotify('workbench.panel.markers.view.focus')<CR>
 nnoremap <LEADER>lq <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
-nnoremap <LEADER>gd <Cmd>call VSCodeNotify('git.timeline.openDiff')<CR>
+nnoremap <LEADER>gd <Cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>
 
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
