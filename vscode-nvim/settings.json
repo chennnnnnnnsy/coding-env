@@ -3,10 +3,32 @@
     "workbench.iconTheme": "material-icon-theme",
     "vscode-neovim.neovimExecutablePaths.win32": "D:\\MyData\\ex_lincx3\\scoop\\shims\\nvim.exe",
     "vscode-neovim.neovimInitVimPaths.win32": "D:\\MyData\\ex_lincx3\\Documents\\coding-env\\vscode-nvim\\init.vim",
-    "editor.fontSize": 16,
     "editor.tabSize": 2,
     "update.enableWindowsBackgroundUpdates": false,
     "update.showReleaseNotes": false,
     "update.mode": "none",
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.profiles.windows": {
+      "git-bash": {
+        "path": "D:\\MyData\\ex_lincx3\\AppData\\Local\\Git\\bin\\bash.exe"
+      }
+    },
+    "terminal.integrated.defaultProfile.windows": "git-bash",
+    "git.path": "D:\\MyData\\ex_lincx3\\AppData\\Local\\Git\\bin\\git.exe",
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.renderWhitespace": "all",
+    "workbench.editor.enablePreview": false,
+    "workbench.activityBar.visible": false,
+    "workbench.list.automaticKeyboardNavigation": false,
+    "editor.scrollBeyondLastLine": false
 }

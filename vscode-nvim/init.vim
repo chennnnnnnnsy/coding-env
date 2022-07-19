@@ -8,7 +8,7 @@ set expandtab " 用spaces代替tabs
 set shiftwidth=2 " 个缩进都插入x个空格
 set tabstop=2 " x个空格代替1个tab
 set softtabstop=2 " x个空格代替1个tab
-set showtabline=2 " 显示tab
+set showtabline=2 " 显示ta
 set nowrap " 换行
 set number " 示行号
 set relativenumber " 显示光标所在行的相对行号
