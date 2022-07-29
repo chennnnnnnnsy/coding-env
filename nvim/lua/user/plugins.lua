@@ -103,7 +103,6 @@ return packer.startup(function(use)
   use("nvim-telescope/telescope.nvim") -- 模糊搜索，如搜索文件等。
 
   -- 语法高亮插件
-  use ("napmn/react-extract.nvim") -- treesitter 中没有支持react，这个格外的扩展可以支持reat。
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}) -- 基于的tree-sitter的语法高亮
   use({"p00f/nvim-ts-rainbow"}) -- 彩虹括号，问你爱不爱。注：nvim-treesitter的插件
 
