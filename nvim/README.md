@@ -26,6 +26,10 @@ scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/downl
 
 3. 下载和配置 Nerd Font
 
-[字体下载地址](https://www.nerdfonts.com/font-downloads)，这里选择了 *FiraMono Nerd Font*，已经放在该项目的fonts目录下。
+[字体下载地址](https://www.nerdfonts.com/font-downloads)，这里选择了 *RobotoMono Nerd Font*，已经放在该项目的fonts目录下。
 
 然后在 *Windows Terminal* 设置字体。
+
+## Neovim 的使用
+
+可以用 **nvim-qt** 或者在 **Windows Terminal** 输入 ```nvim```。
