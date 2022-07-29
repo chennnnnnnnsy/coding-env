@@ -37,7 +37,8 @@ opt('o', 'lazyredraw', true) -- 使宏命令更快响应
 opt('o', 'timeoutlen', 1000) -- mappings等待时间。注：这个值会影响 which-key 插件的响应时间。
 opt('o', 'ttimeoutlen', 100) -- mappings等待时间
 opt('o', 'cmdheight', 2) -- 命令行有更多空间显示信息
--- opt('o', 'guifont', 'Roboto Mono Nerd Font:h18')
+opt('o', 'guifont', 'RobotoMono NF:h14')
+opt('o', 'linespace', 3)
 
 opt('o', 'completeopt', "menu,menuone,noselect") -- 代码补全配置
 opt('o', 'updatetime', 300) -- 更快的补全时间
