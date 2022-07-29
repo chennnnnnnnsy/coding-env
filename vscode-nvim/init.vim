@@ -61,8 +61,6 @@ nnoremap <silent> Q <Cmd>call VSCodeNotify('workbench.action.quit')<CR>
 nnoremap sl <Cmd>call VSCodeNotify('workbench.action.splitEditorRight')<CR>
 nnoremap <silent> P "+p
 vnoremap <silent> Y "+y
-nnoremap <silent> n nzz
-nnoremap <silent> N Nzz
 nnoremap <silent> <Tab> <Cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>
 nnoremap <silent> <S-Tab> <Cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>
 nnoremap <silent> zc <Cmd>call VSCodeNotify('editor.fold')<CR>
