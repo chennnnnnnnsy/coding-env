@@ -28,3 +28,7 @@ configs.setup {
   },
   rainbow = {enable = true, extended_mode = true, max_file_lines = 1000},
 }
+
+local react_ok, react_config = pcall(require, "react-extract")
+if not react_ok then return end
+react_config.setup()
