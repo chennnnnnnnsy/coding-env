@@ -4,7 +4,7 @@ if not status_ok then return end
 configs.setup {
   ensure_installed = {
     "c", "cpp", "lua", "bash", "python", "typescript", "javascript", "rust",
-    "html", "json", "java", "css", "scss", "svelte", "vim", "vue"
+    "html", "json", "java", "css", "scss", "svelte", "vim", "vue", "tsx"
   },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = {""}, -- List of parsers to ignore installing

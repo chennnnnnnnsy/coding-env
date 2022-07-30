@@ -8,9 +8,9 @@ yarn global add \
         typescript-language-server \
         vscode-langservers-extracted \
         prettier
-        # pyright \
+        pyright \
 
-brew update && brew install llvm  lua-language-server luarocks cmake
+brew update && brew install llvm  lua-language-server luarocks cmake autopep8
 
 # 主要用在nvim的项目中全局搜索
 brew install ripgrep

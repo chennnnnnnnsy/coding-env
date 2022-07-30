@@ -8,8 +8,8 @@ handles.set_config()
 
 local server_list = {
   "tailwindcss", "svelte", "vuels", "tsserver", "bashls", "sumneko_lua",
-  "clangd", "eslint", "cssls", "cssmodules_ls"
-  -- "pyright", "rust_analyzer",
+  "clangd", "eslint", "cssls", "cssmodules_ls", "pyright"
+  -- "rust_analyzer",
 }
 
 for _, server in ipairs(server_list) do

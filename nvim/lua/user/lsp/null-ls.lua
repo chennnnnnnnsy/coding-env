@@ -11,6 +11,7 @@ null_ls.setup({
     formatting.lua_format.with({
       extra_args = {'--indent-width=2', '--tab-width=2', '--no-use-tab'}
     }), -- lua
+    formatting.autopep8.with({extra_args = {'-aa'}}), -- python
     null_ls.builtins.code_actions.gitsigns
   }
   -- 保存就格式化
@@ -20,4 +21,3 @@ null_ls.setup({
   --   end
   -- end,
 })
-
