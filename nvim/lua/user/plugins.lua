@@ -40,8 +40,9 @@ return packer.startup(function(use)
 
   use("goolord/alpha-nvim") -- 打开的欢迎页
 
-  use({'dracula/vim', as = "dracula"}) -- 德古拉主题
-  use('RRethy/nvim-base16') -- 主题
+  -- use({'dracula/vim', as = "dracula"}) -- 德古拉主题
+  -- use('RRethy/nvim-base16') -- 主题
+  use('folke/tokyonight.nvim') -- 主题
 
   -- neovim 的界面美化
   use("kyazdani42/nvim-web-devicons") -- 文件图标
@@ -72,7 +73,7 @@ return packer.startup(function(use)
   -- 代码注释插件
   use('numToStr/Comment.nvim') -- 代码注释
   use("AmeerTaweel/todo.nvim") -- todo 注释会高亮，而且可以搜索
-  use 'JoosepAlviste/nvim-ts-context-commentstring' -- 根据treesitter检查当前光标所在行的文本类型，进行注释。注：与Comment.nvim 配合使用.
+  use('JoosepAlviste/nvim-ts-context-commentstring')-- 根据treesitter检查当前光标所在行的文本类型，进行注释。注：与Comment.nvim 配合使用.
 
   -- 补全插件
   use('hrsh7th/cmp-nvim-lsp') -- cmp的source: lsp的补全。
