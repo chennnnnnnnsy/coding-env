@@ -23,7 +23,8 @@ nvim_tree.setup {
     mappings = {
       custom_only = false,
       list = {
-        {key = {"l", "<CR>", "o"}, cb = tree_cb "edit"}, {key = "h", cb = tree_cb "close_node"},
+        {key = {"l", "<CR>", "o"}, cb = tree_cb "edit"},
+        {key = "h", cb = tree_cb "close_node"},
         {key = "v", cb = tree_cb "vsplit"}
       }
     },
@@ -45,15 +46,17 @@ nvim_tree.setup {
           untracked = "U",
           ignored = "◌"
         },
-        folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""},
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = ""
+        }
       }
     }
   },
-  actions = {
-    remove_file = {
-      close_window = true,
-    }
-  }
+  actions = {remove_file = {close_window = true}}
 }
 
 -- local list = {
@@ -90,4 +93,3 @@ nvim_tree.setup {
 --   { key = "q",                            cb = tree_cb("close") },
 --   { key = "g?",                           cb = tree_cb("toggle_help") },
 -- } 
-
