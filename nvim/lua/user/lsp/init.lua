@@ -8,7 +8,8 @@ handles.set_config()
 
 local server_list = {
   "tailwindcss", "svelte", "vuels", "tsserver", "bashls", "sumneko_lua",
-  "clangd", "eslint", "cssls", "cssmodules_ls", "pyright"
+  "clangd", "eslint", "cssls", "cssmodules_ls", "pyright", "solang"
+  -- "solc"
   -- "rust_analyzer",
 }
 
