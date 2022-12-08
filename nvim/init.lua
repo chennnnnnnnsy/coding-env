@@ -25,5 +25,4 @@ require(path .. 'lsp.init')
 require(path .. 'autocommands')
 
 require(path .. 'whichkey')
--- TODO 启动页有缩进线，有去掉。
 

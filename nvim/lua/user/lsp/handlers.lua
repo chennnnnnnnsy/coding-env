@@ -42,7 +42,7 @@ if not status_ok then return end
 
 -- Custom Capabilities
 local custom_capabilities = vim.lsp.protocol.make_client_capabilities()
-M.capabilities = cmp_nvim_lsp.update_capabilities(custom_capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(custom_capabilities)
 
 M.on_attach = function(client, bufnr)
   local bmap = function(type, key, value)

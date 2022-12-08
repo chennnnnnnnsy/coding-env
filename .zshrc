@@ -12,7 +12,9 @@ export TERM=screen-256color
 # export CLASS_PATH=$JAVA_HOME/lib
 # export PATH=`yarn global bin`:/usr/local/opt/llvm/bin:$JAVA_HOME/bin:$PATH
 export PATH=`yarn global bin`:/usr/local/opt/llvm/bin:$PATH
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
  
 # export https_proxy=http://127.0.0.1:8888
 # export http_proxy=http://127.0.0.1:8888

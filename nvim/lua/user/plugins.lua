@@ -50,7 +50,7 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }) -- 状态行
-  use({'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}) -- 顶部buffer状态行
+  use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}) -- 顶部buffer状态行
   use({'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}) -- 文件管理器，就是侧边菜单
   use("lukas-reineke/indent-blankline.nvim") -- 优美地显示tab和缩进
 
@@ -91,7 +91,7 @@ return packer.startup(function(use)
   -- LSP插件
   use('neovim/nvim-lspconfig') -- nvim的LSP配置,用来启动LSP。社区版本。
   use("jose-elias-alvarez/null-ls.nvim") -- 只要用来format. 基于lsp的format插件
-  use('folke/lua-dev.nvim') -- lua 的开发用到的函数签名，代码补全。lua语言服务器的插件.
+  use('folke/neodev.nvim') -- lua 的开发用到的函数签名，代码补全。lua语言服务器的插件.
 
   -- 模糊搜索插件
   use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}) -- 模糊搜索的插件，高性能排序

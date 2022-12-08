@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function(on_attach, capabilities)
-  local luadev = require("lua-dev").setup({
+  local luadev = require("neodev").setup({
     library = {vimruntime = true, types = true, plugins = true},
     lspconfig = {
       cmd = {"lua-language-server"},
