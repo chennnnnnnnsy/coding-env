@@ -14,6 +14,5 @@ local server_list = {
 }
 
 for _, server in ipairs(server_list) do
-  require("user/lsp/servers/" .. server).setup(handles.on_attach,
-                                               handles.capabilities)
+  require("user/lsp/servers/" .. server).setup(handles.on_attach, handles.capabilities)
 end

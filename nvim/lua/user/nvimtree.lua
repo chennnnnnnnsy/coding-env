@@ -4,25 +4,22 @@ if not status_ok then return end
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then return end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- 参考文档 https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach
+local function my_on_attach(bufnr)
+  local api = require('nvim-tree.api')
 
-
-  -- 参考文档 https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach
-  local function my_on_attach(bufnr)
-    local api = require('nvim-tree.api')
-
-    local function opts(desc)
-      return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-    end
-
-    -- user mappings
-    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
-    vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
-    vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
-    vim.keymap.set('n', 'h', api.node.open.edit, opts('Open'))
-    vim.keymap.set('n', '<BS>',  api.node.navigate.parent_close, opts('Close Directory'))
-    vim.keymap.set('n', 'v',  api.node.open.vertical, opts('Open: Vertical Split'))
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
+
+  -- user mappings
+  vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'h', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', '<BS>',  api.node.navigate.parent_close, opts('Close Directory'))
+  vim.keymap.set('n', 'v',  api.node.open.vertical, opts('Open: Vertical Split'))
+end
 
 nvim_tree.setup {
   disable_netrw = true,
@@ -68,38 +65,3 @@ nvim_tree.setup {
   actions = {remove_file = {close_window = true}},
   on_attach = my_on_attach,
 }
-
--- local list = {
---   { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
---   { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
---   { key = "<C-v>",                        cb = tree_cb("vsplit") },
---   { key = "<C-x>",                        cb = tree_cb("split") },
---   { key = "<C-t>",                        cb = tree_cb("tabnew") },
---   { key = "<",                            cb = tree_cb("prev_sibling") },
---   { key = ">",                            cb = tree_cb("next_sibling") },
---   { key = "P",                            cb = tree_cb("parent_node") },
---   { key = "<BS>",                         cb = tree_cb("close_node") },
---   { key = "<Tab>",                        cb = tree_cb("preview") },
---   { key = "K",                            cb = tree_cb("first_sibling") },
---   { key = "J",                            cb = tree_cb("last_sibling") },
---   { key = "I",                            cb = tree_cb("toggle_ignored") },
---   { key = "H",                            cb = tree_cb("toggle_dotfiles") },
---   {key = "R",                            cb = tree_cb("refresh") },
---   { key = "a",                            cb = tree_cb("create") },
---   { key = "d",                            cb = tree_cb("remove") },
---   { key = "D",                            cb = tree_cb("trash") },
---   { key = "r",                            cb = tree_cb("rename") },
---   { key = "<C-r>",                        cb = tree_cb("full_rename") },
---   { key = "x",                            cb = tree_cb("cut") },
---   { key = "c",                            cb = tree_cb("copy") },
---   { key = "p",                            cb = tree_cb("paste") },
---   { key = "y",                            cb = tree_cb("copy_name") },
---   { key = "Y",                            cb = tree_cb("copy_path") },
---   { key = "gy",                           cb = tree_cb("copy_absolute_path") },
---   { key = "[c",                           cb = tree_cb("prev_git_item") },
---   { key = "]c",                           cb = tree_cb("next_git_item") },
---   { key = "-",                            cb = tree_cb("dir_up") },
---   { key = "s",                            cb = tree_cb("system_open") },
---   { key = "q",                            cb = tree_cb("close") },
---   { key = "g?",                           cb = tree_cb("toggle_help") },
--- } 

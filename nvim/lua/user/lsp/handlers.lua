@@ -2,25 +2,25 @@ local M = {}
 
 M.set_config = function()
   vim.lsp.handlers["textDocument/hover"] =
-      vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"})
+      vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
   local signs = {
-    {name = "DiagnosticSignError", text = " "},
-    {name = "DiagnosticSignWarn", text = " "},
-    {name = "DiagnosticSignHint", text = " "},
-    {name = "DiagnosticSignInfo", text = " "}
+    { name = "DiagnosticSignError", text = " " },
+    { name = "DiagnosticSignWarn",  text = " " },
+    { name = "DiagnosticSignHint",  text = " " },
+    { name = "DiagnosticSignInfo",  text = " " }
   }
 
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name,
-                       {texthl = sign.name, text = sign.text, numhl = ""})
+      { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
   local config = {
     -- disable virtual text
-    virtual_text = {prefix = "●"},
+    virtual_text = { prefix = "●" },
     -- show signs
-    signs = {active = signs},
+    signs = { active = signs },
     update_in_insert = true,
     underline = true,
     severity_sort = true,
@@ -47,7 +47,7 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(custom_capabilities)
 M.on_attach = function(client, bufnr)
   local bmap = function(type, key, value)
     vim.api.nvim_buf_set_keymap(bufnr, type, key, value,
-                                {noremap = true, silent = true})
+      { noremap = true, silent = true })
   end
 
   bmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
@@ -60,9 +60,9 @@ M.on_attach = function(client, bufnr)
   -- bmap("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
   -- bmap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
   bmap("n", "g[",
-       '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
+    '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>')
   bmap("n", "g]",
-       '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
+    '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>')
   -- bmap("n", "gq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
   -- bmap("n", "gf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
 
@@ -73,15 +73,15 @@ M.on_attach = function(client, bufnr)
     "tailwindcss", "vuels", "tsserver", -- "null-ls",
     -- "svelte",
     -- "bashls",
-    -- "pyright",
-    "rust_analyzer", -- "lua_ls",
+    "pyright", -- "rust_analyzer",
+    -- "sumneko_lua",
     "clangd"
   }
 
   for _, vo in ipairs(fmt_client) do
     if client.name == vo then
-      client.resolved_capabilities.document_formatting = false
-      client.resolved_capabilities.document_range_formatting = false
+      client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
+      client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
     end
   end
 end

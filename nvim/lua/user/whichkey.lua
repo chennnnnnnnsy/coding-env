@@ -94,7 +94,8 @@ local mappings = {
   u = {
     name = "Utility",
     c = {
-      cmd("lua require('telescope.builtin.internal').colorscheme({enable_preview = true})"),
+      cmd(
+          "lua require('telescope.builtin.internal').colorscheme({enable_preview = true})"),
       "Colorscheme with preview"
     },
     h = {cmd("Telescope help_tags"), "Find Help"},
@@ -151,7 +152,7 @@ local mappings = {
     w = {cmd("Telescope diagnostics"), "Workspace Diagnostics"},
     S = {cmd("Telescope lsp_dynamic_workspace_symbols"), "Workspace Symbols"},
     s = {cmd("Telescope lsp_document_symbols"), "Document Symbols"},
-    f = {cmd("lua vim.lsp.buf.formatting()"), "Format file"}
+    f = {cmd("lua vim.lsp.buf.format()"), "Format file"}
   }
 }
 local vopts = {
@@ -163,7 +164,9 @@ local vopts = {
   nowait = true
 }
 
-local vmappings = {["f"] = {"<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format"}}
+local vmappings = {
+  ["f"] = {"<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format"}
+}
 
 which_key.setup(setup)
 which_key.register(mappings, opts)

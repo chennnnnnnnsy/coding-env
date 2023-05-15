@@ -50,7 +50,7 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }) -- 状态行
-  use({'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}) -- 顶部buffer状态行
+  use({'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}) -- 顶部buffer状态行
   use({'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'}}) -- 文件管理器，就是侧边菜单
   use("lukas-reineke/indent-blankline.nvim") -- 优美地显示tab和缩进
 

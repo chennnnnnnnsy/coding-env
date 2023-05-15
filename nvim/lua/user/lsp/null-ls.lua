@@ -8,7 +8,7 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
   sources = {
     formatting.clang_format, -- c/c++
-    formatting.rustfmt, -- rust
+    -- formatting.rustfmt, -- rust
     formatting.prettier.with({extra_filetypes = {'solidity'}}), -- 前端那一套
     formatting.lua_format.with({
       extra_args = {'--indent-width=2', '--tab-width=2', '--no-use-tab'}
@@ -16,10 +16,4 @@ null_ls.setup({
     formatting.autopep8.with({extra_args = {'-aa'}}), -- python
     null_ls.builtins.code_actions.gitsigns
   }
-  -- 保存就格式化
-  -- on_attach = function(client)
-  --   if client.resolved_capabilities.document_formatting then
-  --       vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-  --   end
-  -- end,
 })
