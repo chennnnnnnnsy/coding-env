@@ -74,7 +74,7 @@ M.on_attach = function(client, bufnr)
     -- "svelte",
     -- "bashls",
     -- "pyright",
-    "rust_analyzer", -- "sumneko_lua",
+    "rust_analyzer", -- "lua_ls",
     "clangd"
   }
 

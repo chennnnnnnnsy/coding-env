@@ -7,7 +7,7 @@ local handles = require('user/lsp/handlers')
 handles.set_config()
 
 local server_list = {
-  "tailwindcss", "svelte", "vuels", "tsserver", "bashls", "sumneko_lua",
+  "tailwindcss", "svelte", "vuels", "tsserver", "bashls", "lua_ls",
   "clangd", "eslint", "cssls", "cssmodules_ls", "pyright", "solang"
   -- "solc"
   -- "rust_analyzer",
