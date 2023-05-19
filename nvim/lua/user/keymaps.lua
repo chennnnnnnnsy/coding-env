@@ -52,3 +52,6 @@ key('n', 'tc', cmd('tabc'), opts)
 -- buffer
 key('n', '<Tab>', cmd('bnext'), opts)
 key('n', '<S-Tab>', cmd('bprevious'), opts)
+
+-- JsDoc
+key('n', '<C-l>', cmd('JsDoc'), opts)

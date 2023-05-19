@@ -74,6 +74,7 @@ return packer.startup(function(use)
   use('numToStr/Comment.nvim') -- 代码注释
   use("AmeerTaweel/todo.nvim") -- todo 注释会高亮，而且可以搜索
   use('JoosepAlviste/nvim-ts-context-commentstring')-- 根据treesitter检查当前光标所在行的文本类型，进行注释。注：与Comment.nvim 配合使用.
+  use {'heavenshell/vim-jsdoc', run = 'make install', ft = {'javascript', 'javascript.jsx','typescript'}}
 
   -- 补全插件
   use('hrsh7th/cmp-nvim-lsp') -- cmp的source: lsp的补全。
@@ -108,6 +109,12 @@ return packer.startup(function(use)
   use({"p00f/nvim-ts-rainbow"}) -- 彩虹括号，问你爱不爱。注：nvim-treesitter的插件
 
   use("lewis6991/gitsigns.nvim") -- git集成器。
+
+  -- Debug 工具
+  -- use('mfussenegger/nvim-dap')
+  -- use('rcarriga/nvim-dap-ui')
+  -- use('theHamsta/nvim-dap-virtual-text')
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

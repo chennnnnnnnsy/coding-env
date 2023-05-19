@@ -19,6 +19,7 @@ local function my_on_attach(bufnr)
   vim.keymap.set('n', 'h', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', '<BS>',  api.node.navigate.parent_close, opts('Close Directory'))
   vim.keymap.set('n', 'v',  api.node.open.vertical, opts('Open: Vertical Split'))
+  vim.keymap.set('n', 'a',  api.fs.create, opts('Create'))
 end
 
 nvim_tree.setup {
@@ -63,5 +64,5 @@ nvim_tree.setup {
     }
   },
   actions = {remove_file = {close_window = true}},
-  on_attach = my_on_attach,
+  -- on_attach = my_on_attach,
 }

@@ -165,7 +165,7 @@ local vopts = {
 }
 
 local vmappings = {
-  ["f"] = {"<esc><cmd>lua vim.lsp.buf.range_formatting()<cr>", "Format"}
+  ["f"] = {"<esc><cmd>lua vim.lsp.buf.format({range = {1,0}})<cr>", "Format"}
 }
 
 which_key.setup(setup)

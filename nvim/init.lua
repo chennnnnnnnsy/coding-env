@@ -6,6 +6,7 @@ require(path .. 'plugins')
 require(path .. 'theme')
 
 -- plugin configure
+require(path .. 'neodev')
 require(path .. 'alpha')
 require(path .. 'statusline')
 require(path .. 'bufferline')
