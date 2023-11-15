@@ -68,9 +68,9 @@ M.on_attach = function(client, bufnr)
 
   require('illuminate').on_attach(client)
 
-  -- 用 null-ls 来格式化
+  -- 用 nvim-lint 来格式化
   local fmt_client = {
-    "tailwindcss", "vuels", "tsserver", -- "null-ls",
+    "tailwindcss", "vuels", "tsserver",
     -- "svelte",
     -- "bashls",
     "pyright", -- "rust_analyzer",

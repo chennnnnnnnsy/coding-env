@@ -19,6 +19,9 @@ key('', 's', '<Nop>', opts)
 key('n', ';', ':', opt_n)
 key('i', 'jk', '<Esc><Esc>', opt_n)
 
+key('n', 'H', '^', opts)
+key('n', 'L', '$', opts)
+
 -- save & quit
 key('n', 'W', cmd('w'), opts)
 key('n', 'Q', cmd('q'), opts)
@@ -54,4 +57,4 @@ key('n', '<Tab>', cmd('bnext'), opts)
 key('n', '<S-Tab>', cmd('bprevious'), opts)
 
 -- JsDoc
-key('n', '<C-l>', cmd('JsDoc'), opts)
+-- key('n', '<C-l>', cmd('JsDoc'), opts)

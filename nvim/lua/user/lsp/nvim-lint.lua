@@ -1,11 +1,11 @@
-local status_ok, null_ls = pcall(require, "null-ls")
+local status_ok, nvim_lint = pcall(require, "nvim-lint")
 if not status_ok then return end
 
-local formatting = null_ls.builtins.formatting
+local formatting = nvim_lint.builtins.formatting
 
 -- solidity 的格式化 https://github.com/prettier-solidity/prettier-plugin-solidity
 
-null_ls.setup({
+nvim_lint.setup({
   sources = {
     formatting.clang_format, -- c/c++
     -- formatting.rustfmt, -- rust
@@ -14,6 +14,6 @@ null_ls.setup({
       extra_args = {'--indent-width=2', '--tab-width=2', '--no-use-tab'}
     }), -- lua
     formatting.autopep8.with({extra_args = {'-aa'}}), -- python
-    null_ls.builtins.code_actions.gitsigns
+    nvim_lint.builtins.code_actions.gitsigns
   }
 })

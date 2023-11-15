@@ -81,7 +81,7 @@ local opts = {
 local mappings = {
   ['e'] = {cmd("NvimTreeToggle"), 'Explorer'},
   ['n'] = {':noh<cr>', 'No Highlight'},
-  ['d'] = {cmd("Bdelete!"), 'Delete Current Buffer'},
+  ['d'] = {':bdelete<cr>', 'Delete Current Buffer'},
 
   t = {
     name = "Terminal",
@@ -153,6 +153,11 @@ local mappings = {
     S = {cmd("Telescope lsp_dynamic_workspace_symbols"), "Workspace Symbols"},
     s = {cmd("Telescope lsp_document_symbols"), "Document Symbols"},
     f = {cmd("lua vim.lsp.buf.format()"), "Format file"}
+  },
+  p = {
+    name = 'lazy.nvim',
+    i = {cmd("Lazy sync"), "install, clean and update"},
+    c = {cmd("Lazy check"), "Check for updates"},
   }
 }
 local vopts = {

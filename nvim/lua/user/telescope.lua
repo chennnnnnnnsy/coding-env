@@ -8,6 +8,25 @@ local actions = require("telescope.actions")
 
 telescope.setup({
   defaults = {
+    layout_strategy = "horizontal",
+    layout_config = {
+
+      horizontal = {
+        preview_width = function(_, cols, _)
+          if cols > 200 then
+            return math.floor(cols * 0.4)
+          else
+            return math.floor(cols * 0.6)
+          end
+        end,
+      },
+
+      vertical = {
+        width = 0.9,
+        height = 0.95,
+        preview_height = 0.7,
+      },
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = {"smart"},
