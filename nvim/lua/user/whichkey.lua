@@ -79,16 +79,15 @@ local opts = {
 }
 
 local mappings = {
-  ['e'] = {cmd("NvimTreeToggle"), 'Explorer'},
   ['n'] = {':noh<cr>', 'No Highlight'},
   ['d'] = {':bdelete<cr>', 'Delete Current Buffer'},
 
   t = {
     name = "Terminal",
     n = {cmd("lua _NODE_TOGGLE()"), "Node"},
-    f = {cmd("ToggleTerm direction=float"), "Float"},
-    h = {cmd("ToggleTerm size=10 direction=horizontal"), "Horizontal"},
-    v = {cmd("ToggleTerm size=80 direction=vertical"), "Vertical"}
+    f = {cmd("ToggleTerm dir=\'%:p:h\' direction=float"), "Float"},
+    h = {cmd("ToggleTerm dir=\'%:p:h\' size=10 direction=horizontal"), "Horizontal"},
+    v = {cmd("ToggleTerm dir=\'%:p:h\' size=80 direction=vertical"), "Vertical"}
   },
 
   u = {
@@ -103,16 +102,6 @@ local mappings = {
     k = {cmd("Telescope keymaps"), "Keymaps"},
     C = {cmd("Telescope commands"), "Commands"}
   },
-
-  p = {
-    name = "Packer",
-    c = {cmd("PackerCompile"), "Compile"},
-    i = {cmd("PackerInstall"), "Install"},
-    s = {cmd("PackerSync"), "Sync"},
-    S = {cmd("PackerStatus"), "Status"},
-    u = {cmd("PackerUpdate"), "Update"}
-  },
-
   f = {
     name = 'Finder',
     f = {cmd("Telescope find_files"), "Find files"},

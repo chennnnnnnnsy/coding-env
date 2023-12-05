@@ -43,7 +43,7 @@ require("lazy").setup({
   -- 文本编辑用到的
   "kevinhwang91/nvim-hlslens", -- 搜索的结果可以知道有多少个
   "RRethy/vim-illuminate", -- 光标所在词，在全文都高亮
-  "machakann/vim-sandwich", -- 加入、替换、删除一些单引号、双引号、括号等
+  "tpope/vim-surround", -- 加入、替换、删除一些单引号、双引号、括号等
   "mg979/vim-visual-multi", -- 多光标
   "gcmt/wildfire.vim", -- 回车可以选择闭合标签里面的内容
 

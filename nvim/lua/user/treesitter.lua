@@ -23,9 +23,5 @@ configs.setup {
     additional_vim_regex_highlighting = true
   },
   indent = {enable = true, disable = {"yaml"}},
-  context_commentstring = { -- nvim-ts-context-commentstring插件和Comment.nvim插件以一起用需要的配置。
-    enable = true,
-    enable_autocmd = false
-  },
   rainbow = {enable = true, extended_mode = true, max_file_lines = 1000}
 }

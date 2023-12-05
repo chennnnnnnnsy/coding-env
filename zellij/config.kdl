@@ -1,0 +1,8 @@
+pane_frames false
+// default_layout "compact"
+session_serialization true
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
