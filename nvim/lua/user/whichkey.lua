@@ -109,7 +109,9 @@ local mappings = {
     p = {cmd("Telescope projects"), "Projects"},
     r = {cmd("Telescope oldfiles"), "Open Recent File"},
     b = {cmd("Telescope buffers"), "Find Buffers"},
-    m = {cmd("TODOTelescope"), "Find Todo Comments"}
+    m = {cmd("TODOTelescope"), "Find Todo Comments"},
+    e = {cmd("Telescope file_browser"), "File browser"},
+    -- e = {cmd("Telescope file_browser path=%:p:h select_buffer=true"), "File browser"},
   },
   g = {
     name = "Git",

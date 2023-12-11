@@ -32,7 +32,7 @@ require("lazy").setup({
   {"kyazdani42/nvim-web-devicons", lazy = true}, -- 文件图标
    "nvim-lualine/lualine.nvim",
    "akinsho/bufferline.nvim", -- 顶部buffer状态行
-   "nvim-tree/nvim-tree.lua", -- 文件管理器，就是侧边菜单
+   "nvim-tree/nvim-tree.lua", -- 文件管理器，就是侧边菜单 TODO: 有了telescope-file-browser.nvim, 还要不要这个呢
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- 优美地显示tab和缩进
 
   -- 杂项
@@ -43,12 +43,12 @@ require("lazy").setup({
   -- 文本编辑用到的
   "kevinhwang91/nvim-hlslens", -- 搜索的结果可以知道有多少个
   "RRethy/vim-illuminate", -- 光标所在词，在全文都高亮
-  "tpope/vim-surround", -- 加入、替换、删除一些单引号、双引号、括号等
   "mg979/vim-visual-multi", -- 多光标
-  "gcmt/wildfire.vim", -- 回车可以选择闭合标签里面的内容
-
+  -- "gcmt/wildfire.vim", -- 回车可以选择闭合标签里面的内容 TODO: 可以换成 wildfire.nvim
   "windwp/nvim-autopairs", -- 自动添加括号、中括号等。与 nvim-cmp , treesitter 集成.
   "windwp/nvim-ts-autotag", -- 自动添加闭合标签，常用于前端.
+  { "folke/flash.nvim", event = "VeryLazy" },
+  { "kylechui/nvim-surround", version = "*", event = "VeryLazy"},
 
   -- 代码注释插件
   "numToStr/Comment.nvim", -- 代码注释
@@ -74,14 +74,15 @@ require("lazy").setup({
   "mfussenegger/nvim-lint", -- 只要用来format. 基于lsp的format插件
 
   -- 模糊搜索插件
-  {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}, -- 模糊搜索的插件，高性能排序 TODO:找替代品
+  {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}, -- 模糊搜索的插件，高性能排序
   "ahmedkhalf/project.nvim", -- 与telescope集成，搜索项目
   { "crispgm/telescope-heading.nvim",
     ft = "markdown",
     config = function() require("telescope").load_extension("heading") end
   }, -- 用在makrdown文件上，标题搜索.
   "nvim-telescope/telescope.nvim", -- 模糊搜索，如搜索文件等。
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.4' },
+  { 'nvim-telescope/telescope.nvim', tag = '0.1.5' },
+  "nvim-telescope/telescope-file-browser.nvim", -- file browser
 
   -- 语法高亮插件
   {"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate"}, -- 基于的tree-sitter的语法高亮

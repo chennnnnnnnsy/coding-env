@@ -23,6 +23,8 @@ require(path .. 'telescope')
 require(path .. 'gitsigns')
 require(path .. 'lsp.init')
 require(path .. 'autocommands')
+require(path .. 'flash')
+require(path .. 'nvim-surround')
 
 require(path .. 'whichkey')
 

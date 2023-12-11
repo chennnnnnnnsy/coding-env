@@ -16,6 +16,9 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 key('', 's', '<Nop>', opts)
+key('', 'S', '<Nop>', opts)
+-- key('', 't', '<Nop>', opts) -- flash 用到
+key('', 'T', '<Nop>', opts)
 key('n', ';', ':', opt_n)
 key('i', 'jk', '<Esc><Esc>', opt_n)
 
