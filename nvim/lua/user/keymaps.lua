@@ -52,8 +52,10 @@ key("n", "<a-Right>", cmd('vertical resize +2'), opts)
 
 -- tab
 key('n', 'tn', cmd('tabnew'), opts)
-key('n', 'to', cmd('tabo'), opts)
-key('n', 'tc', cmd('tabc'), opts)
+-- key('n', 'to', cmd('tabonly'), opts)
+key('n', 'tc', cmd('tabclose'), opts)
+key('n', 'tj', cmd('tabnext'), opts)
+key('n', 'tk', cmd('tabNext'), opts)
 
 -- buffer
 key('n', '<Tab>', cmd('bnext'), opts)

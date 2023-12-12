@@ -88,7 +88,9 @@ require("lazy").setup({
   {"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate"}, -- 基于的tree-sitter的语法高亮
   "p00f/nvim-ts-rainbow", -- 彩虹括号，问你爱不爱。注：nvim-treesitter的插件
 
-  "lewis6991/gitsigns.nvim", -- git集成器。
+  -- git集成器。
+  "lewis6991/gitsigns.nvim",
+  "sindrets/diffview.nvim",
 
   -- Debug 工具
   -- use('mfussenegger/nvim-dap')

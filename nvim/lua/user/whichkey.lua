@@ -127,7 +127,8 @@ local mappings = {
     o = {cmd("Telescope git_status"), "Open changed file"},
     b = {cmd("Telescope git_branches"), "Checkout branch"},
     c = {cmd("Telescope git_commits"), "Checkout commit"},
-    d = {cmd("Gitsigns diffthis HEAD"), "Diff"}
+    d = {cmd("DiffviewFileHistory %"), "Diff file"},
+    D = {cmd("DiffviewFileHistory"), "Files history"},
   },
 
   l = {
