@@ -124,11 +124,13 @@ local mappings = {
     u = {cmd("lua require 'gitsigns'.undo_stage_hunk()"), "Undo Stage Hunk"},
     s = {cmd("lua require 'gitsigns'.stage_hunk()"), "Stage Hunk"},
     S = {cmd("lua require 'gitsigns'.stage_buffer()"), "Stage Buffer"},
-    o = {cmd("Telescope git_status"), "Open changed file"},
-    b = {cmd("Telescope git_branches"), "Checkout branch"},
-    c = {cmd("Telescope git_commits"), "Checkout commit"},
-    d = {cmd("DiffviewFileHistory %"), "Diff file"},
-    D = {cmd("DiffviewFileHistory"), "Files history"},
+    o = {cmd("Telescope git_status"), "Open Changed File"},
+    b = {cmd("Telescope git_branches"), "Checkout Branch"},
+    c = {cmd("Telescope git_commits"), "Checkout Commit"},
+    d = {cmd("lua require 'gitsigns'.diffthis()"), "Diff"},
+    D = {cmd("lua require 'gitsigns'.diffthis('~')"), "Diff"},
+    h = {cmd("DiffviewFileHistory %"), "File History"},
+    H = {cmd("DiffviewFileHistory"), "Files History"},
   },
 
   l = {
