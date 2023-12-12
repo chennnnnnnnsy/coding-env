@@ -85,6 +85,7 @@ local mappings = {
   t = {
     name = "Terminal",
     n = {cmd("lua _NODE_TOGGLE()"), "Node"},
+    -- g = {cmd("lua _LAZYGIT_TOGGLE()"), "Lazygit"},
     f = {cmd("ToggleTerm dir=\'%:p:h\' direction=float"), "Float"},
     h = {cmd("ToggleTerm dir=\'%:p:h\' size=10 direction=horizontal"), "Horizontal"},
     v = {cmd("ToggleTerm dir=\'%:p:h\' size=80 direction=vertical"), "Vertical"}
@@ -92,11 +93,6 @@ local mappings = {
 
   u = {
     name = "Utility",
-    c = {
-      cmd(
-          "lua require('telescope.builtin.internal').colorscheme({enable_preview = true})"),
-      "Colorscheme with preview"
-    },
     h = {cmd("Telescope help_tags"), "Find Help"},
     M = {cmd("Telescope man_pages"), "Man Pages"},
     k = {cmd("Telescope keymaps"), "Keymaps"},

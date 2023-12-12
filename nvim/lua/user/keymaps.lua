@@ -20,7 +20,6 @@ key('', 'S', '<Nop>', opts)
 -- key('', 't', '<Nop>', opts) -- flash 用到
 key('', 'T', '<Nop>', opts)
 key('n', ';', ':', opt_n)
-key('i', 'jk', '<Esc><Esc>', opt_n)
 
 key('n', 'H', '^', opts)
 key('n', 'L', '$', opts)
@@ -67,5 +66,6 @@ key('n', '<C-b>', cmd("NvimTreeToggle"), opts);
 -- key('i', '<C-h>','<Esc>ha', opts)
 -- key('i', '<C-j>','<Esc>ja', opts)
 -- key('i', '<C-k>','<Esc>ka', opts)
+
 -- JsDoc
 -- key('n', '<C-l>', cmd('JsDoc'), opts)

@@ -27,6 +27,7 @@ require("lazy").setup({
   -- use({'dracula/vim', as = "dracula"}) -- 德古拉主题
   -- use('RRethy/nvim-base16') -- 主题
   { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} }, --主题
+  "sainnhe/everforest",
 
   -- neovim 的界面美化
   {"kyazdani42/nvim-web-devicons", lazy = true}, -- 文件图标
