@@ -62,9 +62,10 @@ key('n', '<Tab>', cmd('bnext'), opts)
 key('n', '<S-Tab>', cmd('bprevious'), opts)
 key('n', '<C-b>', cmd("NvimTreeToggle"), opts);
 
-key('i', '<C-l>','<Esc>la', opts)
-key('i', '<C-h>','<Esc>ha', opts)
-key('i', '<C-j>','<Esc>ja', opts)
-key('i', '<C-k>','<Esc>ka', opts)
+-- 利用 插入-普通模式 <C-o> 进行移动
+-- key('i', '<C-l>','<Esc>la', opts)
+-- key('i', '<C-h>','<Esc>ha', opts)
+-- key('i', '<C-j>','<Esc>ja', opts)
+-- key('i', '<C-k>','<Esc>ka', opts)
 -- JsDoc
 -- key('n', '<C-l>', cmd('JsDoc'), opts)
