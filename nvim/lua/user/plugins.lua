@@ -22,18 +22,16 @@ require("lazy").setup({
   "lewis6991/impatient.nvim", -- 加快打开nvim速度，因为用到了缓存
   "folke/neodev.nvim", -- lua 的开发用到的函数签名，代码补全。lua语言服务器的插件.
 
-  "goolord/alpha-nvim", -- 打开的欢迎页
-
-  -- use({'dracula/vim', as = "dracula"}) -- 德古拉主题
-  -- use('RRethy/nvim-base16') -- 主题
-  { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} }, --主题
-  "sainnhe/everforest",
+  -- {'dracula/vim', name = "dracula"}, -- 德古拉主题
+  -- { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} }, --主题
+  "sainnhe/everforest", -- 主题
 
   -- neovim 的界面美化
+  "goolord/alpha-nvim", -- 打开的欢迎页
   {"kyazdani42/nvim-web-devicons", lazy = true}, -- 文件图标
    "nvim-lualine/lualine.nvim",
    "akinsho/bufferline.nvim", -- 顶部buffer状态行
-   "nvim-tree/nvim-tree.lua", -- 文件管理器，就是侧边菜单 TODO: 有了telescope-file-browser.nvim, 还要不要这个呢
+   -- "nvim-tree/nvim-tree.lua", -- 文件管理器，就是侧边菜单
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- 优美地显示tab和缩进
 
   -- 杂项
@@ -45,11 +43,11 @@ require("lazy").setup({
   "kevinhwang91/nvim-hlslens", -- 搜索的结果可以知道有多少个
   "RRethy/vim-illuminate", -- 光标所在词，在全文都高亮
   "mg979/vim-visual-multi", -- 多光标
-  -- "gcmt/wildfire.vim", -- 回车可以选择闭合标签里面的内容 TODO: 可以换成 wildfire.nvim
   "windwp/nvim-autopairs", -- 自动添加括号、中括号等。与 nvim-cmp , treesitter 集成.
   "windwp/nvim-ts-autotag", -- 自动添加闭合标签，常用于前端.
-  { "folke/flash.nvim", event = "VeryLazy" },
   { "kylechui/nvim-surround", version = "*", event = "VeryLazy"},
+  { "sustech-data/wildfire.nvim", event = "VeryLazy",dependencies = { "nvim-treesitter/nvim-treesitter" } }, -- 回车可以选择闭合标签里面的内容
+  { "ggandor/leap.nvim", dependencies = {"tpope/vim-repeat"}, event = "VeryLazy"},
 
   -- 代码注释插件
   "numToStr/Comment.nvim", -- 代码注释
@@ -94,9 +92,9 @@ require("lazy").setup({
   "sindrets/diffview.nvim",
 
   -- Debug 工具
-  -- use('mfussenegger/nvim-dap')
-  -- use('rcarriga/nvim-dap-ui')
-  -- use('theHamsta/nvim-dap-virtual-text')
+  'mfussenegger/nvim-dap',
+  'rcarriga/nvim-dap-ui',
+  'theHamsta/nvim-dap-virtual-text',
 })
 
 

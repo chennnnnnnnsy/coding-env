@@ -148,6 +148,15 @@ local mappings = {
     name = 'lazy.nvim',
     i = {cmd("Lazy sync"), "install, clean and update"},
     c = {cmd("Lazy check"), "Check for updates"},
+  },
+  z = {
+    name = "Dap",
+    p = {cmd("lua require'dap'.toggle_breakpoint()"), 'Toggle Breakpoint'},
+    c = {cmd("lua require'dap'.continue()"), 'Continue'},
+    o = {cmd("lua require'dap'.step_over()"), 'Step Over'},
+    i = {cmd("lua require'dap'.step_into()"), 'Step Into'},
+    r = {cmd("lua require'dap'.repl.open()"), 'Step Into'},
+    u = {cmd("lua require'dapui'.toggle()"), 'Toggle DapUI'},
   }
 }
 local vopts = {

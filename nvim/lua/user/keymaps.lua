@@ -4,7 +4,7 @@
 -- 注：<leader> 的快捷键都放在了 whichkey.lua 文件。
 -- ======================================================================
 local opts = {noremap = true, silent = true}
-local opt_n = {noremap = true}
+-- local opt_n = {noremap = true}
 
 -- Shorten function name
 local key = vim.api.nvim_set_keymap
@@ -15,11 +15,11 @@ key('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-key('', 's', '<Nop>', opts)
-key('', 'S', '<Nop>', opts)
--- key('', 't', '<Nop>', opts) -- flash 用到
-key('', 'T', '<Nop>', opts)
-key('n', ';', ':', opt_n)
+-- key('', 's', '<Nop>', opts)
+-- key('', 'S', '<Nop>', opts)
+-- key('', 't', '<Nop>', opts)
+-- key('', 'T', '<Nop>', opts)
+-- key('n', ';', ':', opt_n)
 
 key('n', 'H', '^', opts)
 key('n', 'L', '$', opts)
@@ -29,10 +29,10 @@ key('n', 'W', cmd('w'), opts)
 key('n', 'Q', cmd('q'), opts)
 
 -- split
-key('n', 'sh', cmd('set nosplitright') .. cmd('vsplit') .. cmd('set splitright'), opts)
-key('n', 'sk', cmd('set nosplitbelow') .. cmd('split') .. cmd('set splitbelow'), opts)
-key('n', 'sj', cmd('set splitbelow') .. cmd('split'), opts)
-key('n', 'sl', cmd('set splitright') .. cmd('vsplit'), opts)
+key('n', '<C-s>h', cmd('set nosplitright') .. cmd('vsplit') .. cmd('set splitright'), opts)
+key('n', '<C-s>k', cmd('set nosplitbelow') .. cmd('split') .. cmd('set splitbelow'), opts)
+key('n', '<C-s>j', cmd('set splitbelow') .. cmd('split'), opts)
+key('n', '<C-s>l', cmd('set splitright') .. cmd('vsplit'), opts)
 
 -- copy and patse
 key('n', 'P', '"+p', opts)
@@ -51,7 +51,6 @@ key("n", "<a-Right>", cmd('vertical resize +2'), opts)
 
 -- tab
 key('n', 'tn', cmd('tabnew'), opts)
--- key('n', 'to', cmd('tabonly'), opts)
 key('n', 'tc', cmd('tabclose'), opts)
 key('n', 'tj', cmd('tabnext'), opts)
 key('n', 'tk', cmd('tabNext'), opts)
@@ -59,7 +58,6 @@ key('n', 'tk', cmd('tabNext'), opts)
 -- buffer
 key('n', '<Tab>', cmd('bnext'), opts)
 key('n', '<S-Tab>', cmd('bprevious'), opts)
-key('n', '<C-b>', cmd("NvimTreeToggle"), opts);
 
 -- 用 插入-普通模式, <C-o> + 一个普通模式的命令
 -- key('i', '<C-l>','<Esc>la', opts)
