@@ -106,8 +106,8 @@ local mappings = {
     r = {cmd("Telescope oldfiles"), "Open Recent File"},
     b = {cmd("Telescope buffers"), "Find Buffers"},
     m = {cmd("TODOTelescope"), "Find Todo Comments"},
-    e = {cmd("Telescope file_browser"), "File browser"},
-    -- e = {cmd("Telescope file_browser path=%:p:h select_buffer=true"), "File browser"},
+    -- e = {cmd("Telescope file_browser"), "File browser"},
+    e = {cmd("Telescope file_browser path=%:p:h select_buffer=true"), "File browser"},
   },
   g = {
     name = "Git",
@@ -142,7 +142,7 @@ local mappings = {
     w = {cmd("Telescope diagnostics"), "Workspace Diagnostics"},
     S = {cmd("Telescope lsp_dynamic_workspace_symbols"), "Workspace Symbols"},
     s = {cmd("Telescope lsp_document_symbols"), "Document Symbols"},
-    f = {cmd("lua vim.lsp.buf.format()"), "Format file"}
+    f = {cmd("FormatWrite"), "Format file"}
   },
   p = {
     name = 'lazy.nvim',
@@ -169,7 +169,7 @@ local vopts = {
 }
 
 local vmappings = {
-  ["f"] = {"<esc><cmd>lua vim.lsp.buf.format({range = {1,0}})<cr>", "Format"}
+  ["f"] = {"<esc><cmd>FormatWrite<cr>", "Format"}
 }
 
 which_key.setup(setup)

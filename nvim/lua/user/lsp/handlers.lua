@@ -70,12 +70,18 @@ M.on_attach = function(client, bufnr)
 
   -- 用 nvim-lint 来格式化
   local fmt_client = {
-    "tailwindcss", "vuels", "tsserver",
+    -- "tailwindcss",
+    "vuels",
+    "tsserver",
+    "cssls",
+    "cssmodules_ls",
+    "eslint",
+    "clangd",
     -- "svelte",
     -- "bashls",
-    "pyright", -- "rust_analyzer",
+    -- "pyright",
+    -- "rust_analyzer",
     -- "sumneko_lua",
-    "clangd"
   }
 
   for _, vo in ipairs(fmt_client) do

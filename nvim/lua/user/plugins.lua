@@ -48,6 +48,7 @@ require("lazy").setup({
   { "kylechui/nvim-surround", version = "*", event = "VeryLazy"},
   { "sustech-data/wildfire.nvim", event = "VeryLazy",dependencies = { "nvim-treesitter/nvim-treesitter" } }, -- 回车可以选择闭合标签里面的内容
   { "ggandor/leap.nvim", dependencies = {"tpope/vim-repeat"}, event = "VeryLazy"},
+  "mhartington/formatter.nvim",
 
   -- 代码注释插件
   "numToStr/Comment.nvim", -- 代码注释
@@ -70,7 +71,11 @@ require("lazy").setup({
 
   -- LSP插件
   "neovim/nvim-lspconfig", -- nvim的LSP配置,用来启动LSP。社区版本。
-  "mfussenegger/nvim-lint", -- 只要用来format. 基于lsp的format插件
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {}
+  },
 
   -- 模糊搜索插件
   {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}, -- 模糊搜索的插件，高性能排序
