@@ -22,16 +22,15 @@ require("lazy").setup({
   "lewis6991/impatient.nvim", -- 加快打开nvim速度，因为用到了缓存
   "folke/neodev.nvim", -- lua 的开发用到的函数签名，代码补全。lua语言服务器的插件.
 
+
+  -- neovim 的界面美化
   -- {'dracula/vim', name = "dracula"}, -- 德古拉主题
   -- { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} }, --主题
   "sainnhe/everforest", -- 主题
-
-  -- neovim 的界面美化
   "goolord/alpha-nvim", -- 打开的欢迎页
   {"kyazdani42/nvim-web-devicons", lazy = true}, -- 文件图标
    "nvim-lualine/lualine.nvim",
    "akinsho/bufferline.nvim", -- 顶部buffer状态行
-   -- "nvim-tree/nvim-tree.lua", -- 文件管理器，就是侧边菜单
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- 优美地显示tab和缩进
 
   -- 杂项
@@ -43,15 +42,22 @@ require("lazy").setup({
   "kevinhwang91/nvim-hlslens", -- 搜索的结果可以知道有多少个
   "RRethy/vim-illuminate", -- 光标所在词，在全文都高亮
   "mg979/vim-visual-multi", -- 多光标
-  "windwp/nvim-autopairs", -- 自动添加括号、中括号等。与 nvim-cmp , treesitter 集成.
-  "windwp/nvim-ts-autotag", -- 自动添加闭合标签，常用于前端.
+  { 'windwp/nvim-autopairs', event = "InsertEnter"}, -- 自动闭合
+  "windwp/nvim-ts-autotag", -- 自动添加闭合标签，常用于前端. 依赖 treesitter
   { "kylechui/nvim-surround", version = "*", event = "VeryLazy"},
-  { "sustech-data/wildfire.nvim", event = "VeryLazy",dependencies = { "nvim-treesitter/nvim-treesitter" } }, -- 回车可以选择闭合标签里面的内容
+  {
+    "sustech-data/wildfire.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+        require("wildfire").setup()
+    end,
+  },
   { "ggandor/leap.nvim", dependencies = {"tpope/vim-repeat"}, event = "VeryLazy"},
   "mhartington/formatter.nvim",
 
   -- 代码注释插件
-  "numToStr/Comment.nvim", -- 代码注释
+  {"numToStr/Comment.nvim", lazy = false}, -- 代码注释
   "AmeerTaweel/todo.nvim", -- todo 注释会高亮，而且可以搜索
   "JoosepAlviste/nvim-ts-context-commentstring",-- 根据treesitter检查当前光标所在行的文本类型，进行注释。注：与Comment.nvim 配合使用.
   {"heavenshell/vim-jsdoc", build = 'make install', ft = {'javascript', 'javascript.jsx','typescript'}},
@@ -63,14 +69,19 @@ require("lazy").setup({
   "hrsh7th/cmp-cmdline", -- cmp的source: vim 命令行命令补全
   "hrsh7th/nvim-cmp", -- 补全引擎，需要另外添加source
   "lukas-reineke/cmp-under-comparator", -- 提示的补全更好地排序
-  "saadparwaiz1/cmp_luasnip", -- 把LuaSnip加载的代码片段生成source.
-
-  -- 代码片段插件
-  "rafamadriz/friendly-snippets", -- 代码片段集合, 用LuaSnip加载它们
   "L3MON4D3/LuaSnip", --  用来加载代码片段
+  "saadparwaiz1/cmp_luasnip", -- 把LuaSnip加载的代码片段生成source.
+  "rafamadriz/friendly-snippets", -- 代码片段集合, 用LuaSnip加载它们
 
   -- LSP插件
   "neovim/nvim-lspconfig", -- nvim的LSP配置,用来启动LSP。社区版本。
+  {
+    'nvimdev/lspsaga.nvim',
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons'     -- optional
+    }
+  },
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -90,7 +101,6 @@ require("lazy").setup({
 
   -- 语法高亮插件
   {"nvim-treesitter/nvim-treesitter", cmd = "TSUpdate"}, -- 基于的tree-sitter的语法高亮
-  "p00f/nvim-ts-rainbow", -- 彩虹括号，问你爱不爱。注：nvim-treesitter的插件
 
   -- git集成器。
   "lewis6991/gitsigns.nvim",

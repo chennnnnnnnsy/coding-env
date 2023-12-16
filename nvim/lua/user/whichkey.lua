@@ -131,18 +131,24 @@ local mappings = {
 
   l = {
     name = "LSP",
-    i = {cmd("LspInfo"), "LSP Info"},
+    -- i = {cmd("LspInfo"), "LSP Info"},
+    i = {cmd("Lspsaga finder imp"), "Implement"},
     k = {cmd("lua vim.lsp.buf.hover()"), "Hover Doc"},
+    -- k = {cmd("Lspsaga hover_doc"), "Hover Doc"},
     K = {cmd("lua vim.lsp.buf.signature_help()"), "Signature help"},
-    t = {cmd("lua vim.lsp.buf.type_definition()"), "Type definition"},
-    r = {cmd("lua vim.lsp.buf.references()"), "References"},
-    a = {cmd("lua vim.lsp.buf.code_action()"), "Code actions"},
+    t = {cmd("Lspsaga peek_definition"), "Type definition"},
+    -- t = {cmd("lua vim.lsp.buf.type_definition()"), "Type definition"},
+    r = {cmd("Lspsaga ref"), "References"},
+    -- r = {cmd("lua vim.lsp.buf.references()"), "References"},
+    -- a = {cmd("lua vim.lsp.buf.code_action()"), "Code actions"},
+    a = {cmd("Lspsaga code_action"), "Code actions"},
     q = {cmd("lua vim.diagnostic.setloclist()"), "QuickFix"},
     d = {cmd("Telescope diagnostics bufnr=0"), "Document Diagnostics"},
     w = {cmd("Telescope diagnostics"), "Workspace Diagnostics"},
     S = {cmd("Telescope lsp_dynamic_workspace_symbols"), "Workspace Symbols"},
     s = {cmd("Telescope lsp_document_symbols"), "Document Symbols"},
-    f = {cmd("FormatWrite"), "Format file"}
+    f = {cmd("FormatWrite"), "Format file"},
+    n = {cmd("Lspsaga rename"), "rename"}
   },
   p = {
     name = 'lazy.nvim',
