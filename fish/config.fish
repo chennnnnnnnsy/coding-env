@@ -15,9 +15,9 @@ if status is-interactive
     set -Ux HOMEBREW_BOTTLE_DOMAIN "https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
 
     # 终端设置代理
-    set -Ux https_proxy "http://127.0.0.1:6152"
-    set -Ux http_proxy "http://127.0.0.1:6152"
-    set -Ux all_proxy "socks5://127.0.0.1:6153"
+    # set -Ux https_proxy "http://0.0.0.1:6152"
+    # set -Ux http_proxy "http://0:6152"
+    set -Ux all_proxy "socks5://0:6153"
 
     set -Ux C_INCLUDE_PATH "/usr/local/Cellar/llvm/17.0.6/include"
     set -Ux CPLUS_INCLUDE_PATH "/usr/local/Cellar/llvm/17.0.6/include/c++/v1"

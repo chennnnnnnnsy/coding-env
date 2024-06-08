@@ -133,8 +133,8 @@ local mappings = {
     name = "LSP",
     -- i = {cmd("LspInfo"), "LSP Info"},
     i = {cmd("Lspsaga finder imp"), "Implement"},
-    k = {cmd("lua vim.lsp.buf.hover()"), "Hover Doc"},
-    -- k = {cmd("Lspsaga hover_doc"), "Hover Doc"},
+    -- k = {cmd("lua vim.lsp.buf.hover()"), "Hover Doc"},
+    k = {cmd("Lspsaga hover_doc"), "Hover Doc"},
     K = {cmd("lua vim.lsp.buf.signature_help()"), "Signature help"},
     t = {cmd("Lspsaga peek_definition"), "Type definition"},
     -- t = {cmd("lua vim.lsp.buf.type_definition()"), "Type definition"},
@@ -157,12 +157,14 @@ local mappings = {
   },
   z = {
     name = "Dap",
-    p = {cmd("lua require'dap'.toggle_breakpoint()"), 'Toggle Breakpoint'},
-    c = {cmd("lua require'dap'.continue()"), 'Continue'},
+    b = {cmd("lua require'dap'.toggle_breakpoint()"), 'Toggle Breakpoint'},
+    B = {cmd("lua require'dap'.clear_breakpoints()"), 'Clear Breakpoints'},
+    n = {cmd("lua require'dap'.continue()"), 'Continue'},
     o = {cmd("lua require'dap'.step_over()"), 'Step Over'},
     i = {cmd("lua require'dap'.step_into()"), 'Step Into'},
-    r = {cmd("lua require'dap'.repl.open()"), 'Step Into'},
+    r = {cmd("lua require'dap'.repl.toggle()"), 'Repl Toggle'},
     u = {cmd("lua require'dapui'.toggle()"), 'Toggle DapUI'},
+    c = {cmd("lua require'dapui'.close()"), 'Dap Close'},
   }
 }
 local vopts = {

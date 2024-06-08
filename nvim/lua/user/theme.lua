@@ -2,14 +2,14 @@
 -- colorscheme dracula
 vim.cmd([[
   " tokyonight theme ==========
-  " colorscheme tokyonight
+  colorscheme tokyonight
 
   " everforest theme ===========
-  set background=dark
+  " set background=dark
   " set background=light
   " Available values: 'hard', 'medium'(default), 'soft'
-  let g:everforest_background = 'soft'
+  " let g:everforest_background = 'soft'
   " For better performance
-  let g:everforest_better_performance = 1
-  colorscheme everforest
+  " let g:everforest_better_performance = 1
+  " colorscheme everforest
 ]])

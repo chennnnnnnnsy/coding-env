@@ -6,7 +6,7 @@ SETUVAR --export HOMEBREW_BOTTLE_DOMAIN:https\x3a//mirrors\x2etuna\x2etsinghua\x
 SETUVAR --export HOMEBREW_BREW_GIT_REMOTE:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/git/homebrew/brew\x2egit
 SETUVAR --export HOMEBREW_CORE_GIT_REMOTE:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/git/homebrew/homebrew\x2dcore\x2egit
 SETUVAR __fish_initialized:3400
-SETUVAR --export all_proxy:socks5\x3a//127\x2e0\x2e0\x2e1\x3a6153
+SETUVAR --export all_proxy:socks5\x3a//0\x3a6153
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue

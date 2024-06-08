@@ -24,11 +24,11 @@ utils.keymapFn('n', 'L', '$')
 utils.keymapFn('n', 'W', { 'w' })
 utils.keymapFn('n', 'Q', { 'q' })
 
--- split
-utils.keymapFn('n', '<C-s>h', { 'set nosplitright' , 'vsplit' , 'set splitright' })
-utils.keymapFn('n', '<C-s>k', { 'set nosplitbelow','split','set splitbelow'})
-utils.keymapFn('n', '<C-s>j', {'set splitbelow','split'})
-utils.keymapFn('n', '<C-s>l', {'set splitright','vsplit'})
+-- split <C-w> 可以分屏
+-- utils.keymapFn('n', '<C-s>h', { 'set nosplitright' , 'vsplit' , 'set splitright' })
+-- utils.keymapFn('n', '<C-s>k', { 'set nosplitbelow','split','set splitbelow'})
+-- utils.keymapFn('n', '<C-s>j', {'set splitbelow','split'})
+-- utils.keymapFn('n', '<C-s>l', {'set splitright','vsplit'})
 
 -- copy and patse
 utils.keymapFn('n', 'P', '"+p')

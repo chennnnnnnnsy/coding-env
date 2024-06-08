@@ -50,13 +50,13 @@ M.on_attach = function(client, bufnr)
       { noremap = true, silent = true })
   end
 
-  bmap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
-  bmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
+  bmap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>")
+  bmap("n", "gD", "<cmd>lua vim.lsp.buf.decclarationc()<CR>")
   bmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
   -- bmap("n", "gk", "<cmd>lua vim.lsp.buf.hover()<CR>")
   -- bmap("n", "gK", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-  bmap("n", "gr", "<cmd>lua vim.lsp.buf.rename()<CR>")
-  -- bmap("n", "gR", "<cmd>lua vim.lsp.buf.references()<CR>")
+  bmap("n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>")
+  bmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
   -- bmap("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
   -- bmap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
   bmap("n", "g[",
