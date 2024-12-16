@@ -28,4 +28,7 @@ if status is-interactive
     set -gx PATH "/Applications/WezTerm.app/Contents/MacOS":(yarn global bin):"/usr/local/opt/llvm/bin":$PATH
 
     alias gcpp "g++ -stdlib++-isystem $CPLUS_INCLUDE_PATH"
+
+    # 只有在 wezterm 下才有效
+    alias weztn "wezterm cli set-tab-title"
 end

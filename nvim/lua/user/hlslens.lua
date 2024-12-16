@@ -24,7 +24,7 @@ hlslens.setup({
 
 -- keymap
 local utils = require('user/utils')
-utils.keymapFn('n', 'n', {"execute('normal! ' . v:count1 . 'n')","lua require('hlslens').start()",'zz'})
-utils.keymapFn('n', 'N', {"execute('normal! ' . v:count1 . 'N')","lua require('hlslens').start()",'zz'})
-utils.keymapFn('n', '*', {'*',"lua require('hlslens').start()"})
+utils.keymapFnPro('n', 'n', {"cmd#execute('normal! ' . v:count1 . 'n')","cmd#lua require('hlslens').start()","zz"})
+utils.keymapFnPro('n', 'N', {"cmd#execute('normal! ' . v:count1 . 'N')","cmd#lua require('hlslens').start()","zz"})
+utils.keymapFnPro('n', '*', {"*","cmd#lua require('hlslens').start()"})
 
