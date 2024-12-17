@@ -1,34 +1,196 @@
 {
-    "workbench.colorTheme": "Dracula",
-    "workbench.iconTheme": "material-icon-theme",
-    "vscode-neovim.neovimExecutablePaths.win32": "D:\\MyData\\ex_lincx3\\scoop\\shims\\nvim.exe",
-    "vscode-neovim.neovimInitVimPaths.win32": "D:\\MyData\\ex_lincx3\\Documents\\coding-env\\vscode-nvim\\init.vim",
-    "editor.tabSize": 2,
-    "update.enableWindowsBackgroundUpdates": false,
-    "update.showReleaseNotes": false,
-    "update.mode": "none",
+    "zenMode.hideLineNumbers": false,
+    "editor.fontFamily": "Cascadia Code PL",
+
+    "workbench.settings.editor": "json",
+
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+
     "editor.lineNumbers": "relative",
+    "editor.fontSize": 12,
+    "editor.linkedEditing": true,
+    "editor.fontLigatures": true,
+
+    "git.openRepositoryInParentFolders": "never",
+    "gitHistory.showFileHistorySplit": false,
+    "editor.tabSize": 2,
     "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "terminal.integrated.profiles.windows": {
-      "git-bash": {
-        "path": "D:\\MyData\\ex_lincx3\\AppData\\Local\\Git\\bin\\bash.exe"
-      }
-    },
-    "terminal.integrated.defaultProfile.windows": "git-bash",
-    "git.path": "D:\\MyData\\ex_lincx3\\AppData\\Local\\Git\\bin\\git.exe",
+    "workbench.startupEditor": "none",
     "[vue]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBorder": "#8470FF",
+        "editor.lineHighlightBackground": "#8470FF33"
+    },
+
+    // "projectManager.git.baseFolders": [ "$home\\Desktop\\projects" ],
+    // "projectManager.sortList": "Recent",
+
+    "editor.cursorSurroundingLines": 8,
+
+    "vim.foldfix": true,
+    "vim.useCtrlKeys": true,
+    "vim.leader": "<space>",
+    "vim.hlsearch": true,
+    "vim.commandLineModeKeyBindingsNonRecursive": [],
+    "vim.normalModeKeyBindings": [
+        // 禅模式
+        { "before": ["<C-z>"], "commands": ["workbench.action.toggleZenMode"],"silent": true },
+        // 打开控制面板
+        // { "before": [";"], "after": [":"], "silent": true },
+        // 保存 
+        { "before": ["W"], "commands": [":w"], "silent": true },
+        // 全局的复制
+        { "before": ["Q"], "commands": [":q"], "silent": true },
+        { "before": ["H"], "after": ["^"], "silent": true },
+        { "before": ["L"], "after": ["$"], "silent": true },
+        { "before": ["n"], "after": ["n","z", "z" ], "silent": true },
+        { "before": ["N"], "after": ["N","z", "z" ], "silent": true },
+        // { "before": ["<C-d>"], "after": ["<C-d>","z", "z" ], "silent": true },
+        // { "before": ["<C-u>"], "after": ["<C-u>","z", "z" ], "silent": true },
+        // 全局的粘贴
+        { "before": ["P"], "after": ["\"", "+", "p"], "silent": true },
+        // { "before": ["s"], "after": [""], "silent": true },
+        // { "before": ["S"], "after": [""], "silent": true },
+        // 下一个 editor
+        { "before": ["<tab>"], "commands": ["workbench.action.nextEditor"], "silent": true },
+        // 前一个 editor
+        { "before": ["<s-tab>"], "commands": ["workbench.action.previousEditor"], "silent": true },
+        // 取消高亮
+        { "before": ["<leader>", "n"], "commands": [":nohl"], "silent": true},
+        // 前一个 problem
+        { "before": ["g", "["], "commands": ["editor.action.marker.prev"], "silent": true},
+        // 下一个 problem
+        { "before": ["g", "]"], "commands": ["editor.action.marker.next"], "silent": true},
+        // rename symbol
+        { "before": ["g", "R"], "commands": ["editor.action.rename"], "silent": true },
+        { "before": ["g", "r"], "commands": ["editor.action.goToReferences"], "silent": true },
+        { "before": ["g", "d"], "commands": ["editor.action.revealDefinition"], "silent": true },
+        // expand-region
+        { "before": ["enter"], "commands": ["expand_region"], "silent": true},
+        // 关闭当前 editor
+        { "before": ["<leader>", "d"], "commands":[{
+            "command":"workbench.action.closeActiveEditor", "when": "editorTextFocus"
+        }], "silent": true},
+
+        // <leader> + f + xxx
+        // 搜索文件
+        { "before": ["<leader>", "f", "f"], "commands": ["workbench.action.quickOpen"] , "silent": true},
+        // // 选择已打开的editor
+        // { "before": ["<leader>", "f", "r"], "commands": ["workbench.files.action.focusOpenEditorsView"], "silent": true },
+        // // 全局搜索文本
+        // { "before": ["<leader>", "f", "g"], "commands": ["workbench.view.search"], "silent": true },
+        // // 当前 editor 的 symbol
+        // { "before": ["<leader>", "f", "s"], "commands": ["workbench.action.gotoSymbol"], "silent": true },
+        // // 搜索 todo
+        // { "before": ["<leader>", "f", "m"], "commands": [
+        //     "workbench.view.extension.todo-tree-container",
+        //     "todo-tree.showFlatView",
+        //     "todo-tree.scanWorkspaceAndOpenFiles",
+        // ], "silent": true },
+
+        // <leader> + l + xxxx
+        // 光标所在有提示
+        { "before": ["<leader>", "l", "a"], "commands": ["editor.action.quickFix"], "silent": true },
+        { "before": ["<leader>", "l", "f"], "commands": ["editor.action.formatDocument"], "silent": true },
+        { "before": ["<leader>", "l", "k"], "commands": ["editor.action.showHover"], "silent": true },
+        { "before": ["<leader>", "l", "d"], "commands": ["editor.action.peekDefinition"], "silent": true },
+        { "before": ["<leader>", "l", "i"], "commands": ["editor.action.peekImplementation"], "silent": true },
+        { "before": ["<leader>", "l", "r"], "commands": ["editor.action.referenceSearch.trigger"], "silent": true },
+
+        // <leader> + t + xxxx
+        // { "before": ["<leader>", "t", "h"], "commands": ["workbench.action.terminal.toggleTerminal"], "silent": true },
+        
+        // <leader> + g + xxxx
+        { "before": ["<leader>", "g", "t"], "commands": ["workbench.view.scm", "workbench.scm.focus"], "silent": true },
+        { "before": ["<leader>", "g", "b"], "commands": ["git.checkout"], "silent": true },
+        { "before": ["<leader>", "g", "H"], "commands": ["git.viewHistory"], "silent": true },
+        { "before": ["<leader>", "g", "h"], "commands": ["git.viewFileHistory"], "silent": true },
+        { "before": ["<leader>", "g", "j"], "commands": ["workbench.action.editor.nextChange"], "silent": true },
+        { "before": ["<leader>", "g", "k"], "commands": ["workbench.action.editor.previousChange"], "silent": true },
+        { "before": ["<leader>", "g", "p"], "commands": ["editor.action.dirtydiff.next"], "silent": true },
+        { "before": ["<leader>", "g", "l"], "commands": ["gitblame.quickInfo"], "silent": true },
+        { "before": ["<leader>", "g", "d"], "commands": ["git.openChange"], "silent": true },
+
+    ],
+    "vim.insertModeKeyBindings": [
+        // {
+        //     "before": ["j", "k"],
+        //     "after": ["<Esc>", "<Esc>"],
+        //     "silent": true
+        // },
+        // {
+        //     "before": ["<c-z>"],
+        //     "commands": ["undo"],
+        //     "silent": true
+        // }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["Y"],
+            "after": ["\"", "+", "y"],
+            "silent": true
+        },
+        {
+            "before": ["*"],
+            "after": ["y", "/", "<c-r>", "\"", "<Enter>"],
+            "silent": true
+        },
+        {
+            "before": ["<leader>", "l", "f"],
+            "commands": ["editor.action.formatSelection"],
+            "silent": true
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-s>": true,
+        "<C-z>": true,
+        "<C-a>": true,
+        // "<C-w>": true,
+        "<C-f>": true,
+        "<C-b>": false,
+    },
+    "vim.easymotion": false,
+    "vim.surround": true,
+    "vim.sneak": true,
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
+        "asvetliakov.vscode-neovim": 1
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[less]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Noctis Uva",
+    "window.zoomLevel": 1,
+    "security.workspace.trust.untrustedFiles": "open",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
-    "editor.renderWhitespace": "all",
-    "workbench.editor.enablePreview": false,
-    "workbench.activityBar.visible": false,
-    "workbench.list.automaticKeyboardNavigation": false,
-    "editor.scrollBeyondLastLine": false
+    "workbench.iconTheme": "vs-nomo-dark",
+    "extensions.ignoreRecommendations": true,
+    "editor.stickyScroll.enabled": false,
+    "workbench.editor.showTabs": "none",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "window.commandCenter": false,
 }

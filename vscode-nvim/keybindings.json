@@ -1,49 +1,141 @@
+// Place your key bindings in this file to override the defaults
 [
-  {
-    "command": "vscode-neovim.compositeEscape1",
-    "key": "j",
-    "when": "neovim.mode == insert && editorTextFocus",
-    "args": "j"
-  },
-  {
-    "command": "vscode-neovim.compositeEscape2",
-    "key": "k",
-    "when": "neovim.mode == insert && editorTextFocus",
-    "args": "k"
-  },
-  {
-    "key": "tab",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "shift+tab",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.quickOpenSelectNext",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.quickOpenSelectPrevious",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-workbench.action.files.newUntitledFile"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus && neovim.mode == insert"
-  },
-  {
-    "command": "editor.action.addSelectionToNextFindMatch",
-    "key": "ctrl+n",
-    "when": "neovim.mode == normal && editorFocus",
-    "args": "i+ctrl+n"
-  }
+    // 切换 vim 模式
+    {
+        "key": "alt+q",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "toggleVim",
+                // "extension.vim_escape"
+            ]
+        },
+        "when": "editorFocus"
+    },
+
+    // ctrl + \ , 打开 terminal
+    {
+        "key": "ctrl+oem_5",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+
+    // 有弹窗建议选择时
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus" 
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+
+    // 多光标多选相同的词
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+
+
+    // pageDown, pageUp
+    // {
+    //     "key": "ctrl+d",
+    //     "command": "cursorPageDown",
+    //     "when": "textInputFocus"
+    // },
+    // {
+    //     "key": "ctrl+u",
+    //     "command": "cursorPageUp",
+    //     "when": "textInputFocus"
+    // },
+    {
+        "key": "ctrl+d",
+        "command": "extension.smoothscroll_cursorDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "extension.smoothscroll_cursorUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    }
+
+    // // ----------------------------------------------------------------------- //
+    // // ------------------------ 利用快捷键模拟vim   --------------------------- //
+    // // ----------------------------------------------------------------------- //
+    // {
+    //     "key": "escape",
+    //     "command": "workbench.action.files.toggleActiveEditorReadonlyInSession",
+    //     "when": "textInputFocus"
+    // },
+
+    // // ******************** //
+    // // ****** 只读模式 ***** //
+    // // ******************** //
+
+    // // 移动 h j k l w e b
+    // {
+    //     "key": "h",
+    //     "command": "cursorLeft",
+    //     "when": "textInputFocus && editorReadonly"
+    // },
+    // {
+    //     "key": "l",
+    //     "command": "cursorRight",
+    //     "when": "textInputFocus && editorReadonly"
+    // },
+    // {
+    //     "key": "j",
+    //     "command": "cursorDown",
+    //     "when": "textInputFocus && editorReadonly"
+    // },
+    // {
+    //     "key": "k",
+    //     "command": "cursorUp",
+    //     "when": "textInputFocus && editorReadonly"
+    // },
+    // {
+    //     "key": "w",
+    //     "command": "cursorWordStartRight",
+    //     "when": "textInputFocus && !accessibilityModeEnabled && editorReadonly"
+    // },
+    // {
+    //     "key": "e",
+    //     "command": "cursorWordEndRight",
+    //     "when": "textInputFocus && !accessibilityModeEnabled && editorReadonly"
+    // },
+    // {
+    //     "key": "b",
+    //     "command": "cursorWordStartLeft",
+    //     "when": "textInputFocus && !accessibilityModeEnabled && editorReadonly"
+    // },
+
+    // // find
+    // {
+    //     "key": "/",
+    //     "command": "actions.find",
+    //     "when": "textInputFocus && editorReadonly"
+    // },
 ]
