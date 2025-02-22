@@ -9,7 +9,7 @@ normal = {family = "mononoki Nerd Font", style = "Regular" }
 bold = {family = "mononoki Nerd Font", style = "Bold" }
 italic = {family = "mononoki Nerd Font", style = "Regular" }
 bold_italic = {family = "mononoki Nerd Font", style = "Bold" }
-size = 22.0
+size = 14.0
 offset = { x = 2, y = 0 }
 
 [terminal]
