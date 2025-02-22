@@ -1,18 +1,1 @@
 theme = "dracula"
-
-[[language]]
-name = "vue"
-scope = "source.vue"
-injection-regex = "vue"
-file-types = ["vue"]
-comment-token = "<!--"
-indent = { tab-width = 2, unit = "  " }
-language-server = { command = "vue-language-server", args = ["--stdio"] }
-
-[formatters]
-prettier = { command = "prettier", args = ["--stdin-filepath", "$FILENAME"] }
-
-[[file-types]]
-name = "Vue"
-formatter = "prettier"
-
