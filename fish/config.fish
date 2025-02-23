@@ -25,7 +25,7 @@ if status is-interactive
     set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
 
     # 全局变量
-    set -gx PATH "(yarn global bin):"/usr/local/opt/llvm/bin":$PATH
+    set -gx PATH (yarn global bin):"/usr/local/opt/llvm/bin":$PATH
 
     alias gcpp "g++ -stdlib++-isystem $CPLUS_INCLUDE_PATH"
 
