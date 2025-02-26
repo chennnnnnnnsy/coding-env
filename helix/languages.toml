@@ -1,9 +1,0 @@
-[[language]]
-name = "vue"
-scope = "source.vue"
-injection-regex = "vue"
-file-types = ["vue"]
-comment-token = "<!--"
-indent = { tab-width = 2, unit = "  " }
-formatter = { command = "prettier", args = ["--stdin-filepath", "$FILENAME"] }
-language-server = [ "vue-language-server" ]
