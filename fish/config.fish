@@ -19,17 +19,6 @@ if status is-interactive
     # set -Ux http_proxy "http://0:6152"
     set -Ux all_proxy "socks5://0:6153"
 
-    # set -Ux C_INCLUDE_PATH "/usr/local/Cellar/llvm/17.0.6/include"
-    # set -Ux CPLUS_INCLUDE_PATH "/usr/local/Cellar/llvm/17.0.6/include/c++/v1"
-    # set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
-    # set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
-
     # 全局变量
-    # set -gx PATH (yarn global bin):"/usr/local/opt/llvm/bin":$PATH
-    set -gx PATH (yarn global bin):$PATH
 
-    # alias gcpp "g++ -stdlib++-isystem $CPLUS_INCLUDE_PATH"
-
-    # 只有在 wezterm 下才有效
-    # alias weztn "wezterm cli set-tab-title"
 end
