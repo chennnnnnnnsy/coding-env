@@ -1,72 +1,24 @@
+# 开发环境配置
 
-# Docker
-
-## 生成 Images 命令
-
-注意：版本号需要自行设置
-
+1. 安装 git
+2. 把这个项目拉下来
+3. 安装 homebrew
+4. 用 brew 来安装 fnm、fish、starship、pnpm
+5. shell 默认使用 fish
 ```bash
-docker build -f ./docker/coding_dockerfile -t coding:x.x.x .
+# 先执行这个加入shell配置表里
+command -v fish | sudo tee -a /etc/shells
+
+# 然后执行这个
+chsh -s "$(command -v fish)"
 ```
-
-## 启动容器命令
-
-volumes 可以设置多个。
-
-注意：版本号需要写对
-
+5. 用 fnm 来安装 nodejs
+6. 用软链接把 fish 和 starship 的配置文件链接到 .config 文件夹下
 ```bash
-docker run -it -P --name coding \
-      -v 宿主机的绝对路径:容器的绝对路径 \
-      coding:x.x.x
+ln -s /Users/chensy/Codes/coding-env/fish ~/.config/fish
+ln -s /Users/chensy/Codes/coding-env/starship.toml ~/.config/starship.toml
 ```
+7. 选一款自己喜欢的 Nerd Font 字体，然后配置到 Terminal
+8. 用 Dracula Theme 配置 Terminal
 
-## 进去容器
-
-注意：进入容器不能使用```attach```
-
-```bash
-docker exec -it coding:x.x.x
-```
-
-## 进入容器后
-
-1. 用 _root_ 用户添加 _chensy_ 用户的 _sudo_ 权限，`visudo`。
-
-```shell
-# 加上这一句
-%lin ALL=(ALL) NOPASSWD: ALL
-```
-
-2. root 用户登出。
-
-3. 执行当前项目 *docker/run_start.sh*
-
-3. 更新资源、工具。```sudo pacman -Syyu --noconfirm```
-
-## 遇到的问题
-
-1. _Dockerfile_ 生成的镜像运行时在 _Mac_ 上用匿名卷会找不到 _Source Path_ 位置。因为启动时指定卷位置。
-2. Docker 遇到一个 systemctl 用不了的问题，解决办法docker创建容器时开启特权模式。[解决方法](https://blog.csdn.net/zhangyuhaifa/article/details/119756642).
-3. Docker 特权模式在MacOS 有问题。而且开启不了 systemctl 。
-
-# Neovim
-
-lua + packer + nvim-lsp-config + nvim-treesisster
-
-这个一套配置都是用 _lua_ 语言写的。
-
-用到了 **Neovim** 内置的 **LSP**，因此需要手动安装语言服务。
-
-~~- _pyright_~~
-- _bash-language-server_
-- _@tailwindcss/language-server_
-- _svelte-language-server_
-- _vls_
-- _typescript && typescript-language-server_
-- _clang_
-- _lua-language-server_
-- _vscode-langservers-extracted_
-- _prettier_
-- _cssmodules-language-server_
-~~ - _rust-analyzer_ ~~
+以上完成了开发环境的配置

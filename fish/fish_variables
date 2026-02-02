@@ -2,9 +2,10 @@
 # VERSION: 3.0
 SETUVAR --export --path CPLUS_INCLUDE_PATH:/usr/local/Cellar/llvm/17\x2e0\x2e6/include/c\x2b\x2b/v1
 SETUVAR --export --path C_INCLUDE_PATH:/usr/local/Cellar/llvm/17\x2e0\x2e6/include
-SETUVAR --export HOMEBREW_BOTTLE_DOMAIN:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/homebrew\x2dbottles
-SETUVAR --export HOMEBREW_BREW_GIT_REMOTE:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/git/homebrew/brew\x2egit
-SETUVAR --export HOMEBREW_CORE_GIT_REMOTE:https\x3a//mirrors\x2etuna\x2etsinghua\x2eedu\x2ecn/git/homebrew/homebrew\x2dcore\x2egit
+SETUVAR --export HOMEBREW_API_DOMAIN:https\x3a//mirrors\x2eustc\x2eedu\x2ecn/homebrew\x2dbottles/api
+SETUVAR --export HOMEBREW_BOTTLE_DOMAIN:https\x3a//mirrors\x2eustc\x2eedu\x2ecn/homebrew\x2dbottles
+SETUVAR --export HOMEBREW_BREW_GIT_REMOTE:https\x3a//mirrors\x2eustc\x2eedu\x2ecn/brew\x2egit
+SETUVAR --export HOMEBREW_CORE_GIT_REMOTE:https\x3a//mirrors\x2eustc\x2eedu\x2ecn/homebrew\x2dcore\x2egit
 SETUVAR __fish_initialized:4300
 SETUVAR --export all_proxy:socks5\x3a//0\x3a6153
 SETUVAR fish_greeting:\x1d
