@@ -72,15 +72,17 @@
     //     "when": "textInputFocus"
     // },
     {
-        "key": "ctrl+d",
-        "command": "extension.smoothscroll_cursorDown",
-        "when": "editorTextFocus && !suggestWidgetVisible"
-    },
-    {
+        "command": "germanScroll.bertholdUp",
         "key": "ctrl+u",
-        "command": "extension.smoothscroll_cursorUp",
-        "when": "editorTextFocus && !suggestWidgetVisible"
-    }
+        "mac": "cmd+u",
+        "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+     },
+     {
+        "command": "germanScroll.bertholdDown",
+        "key": "ctrl+d",
+        "mac": "cmd+d",
+        "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+     },
 
     // // ----------------------------------------------------------------------- //
     // // ------------------------ 利用快捷键模拟vim   --------------------------- //
