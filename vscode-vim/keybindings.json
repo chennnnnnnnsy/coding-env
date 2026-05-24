@@ -1,18 +1,5 @@
 // Place your key bindings in this file to override the defaults
 [
-    // 切换 vim 模式
-    {
-        "key": "alt+q",
-        "command": "runCommands",
-        "args": {
-            "commands": [
-                "toggleVim",
-                // "extension.vim_escape"
-            ]
-        },
-        "when": "editorFocus"
-    },
-
     // ctrl + \ , 打开 terminal
     {
         "key": "ctrl+oem_5",
@@ -58,86 +45,31 @@
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
     },
-
-
-    // pageDown, pageUp
-    // {
-    //     "key": "ctrl+d",
-    //     "command": "cursorPageDown",
-    //     "when": "textInputFocus"
-    // },
-    // {
-    //     "key": "ctrl+u",
-    //     "command": "cursorPageUp",
-    //     "when": "textInputFocus"
-    // },
     {
         "command": "germanScroll.bertholdUp",
         "key": "ctrl+u",
         "mac": "cmd+u",
-        "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
+        "when": "editorTextFocus && neovim.mode != 'insert'"
      },
      {
         "command": "germanScroll.bertholdDown",
         "key": "ctrl+d",
         "mac": "cmd+d",
-        "when": "vim.active && editorTextFocus && vim.mode != 'Insert'"
-     },
-
-    // // ----------------------------------------------------------------------- //
-    // // ------------------------ 利用快捷键模拟vim   --------------------------- //
-    // // ----------------------------------------------------------------------- //
-    // {
-    //     "key": "escape",
-    //     "command": "workbench.action.files.toggleActiveEditorReadonlyInSession",
-    //     "when": "textInputFocus"
-    // },
-
-    // // ******************** //
-    // // ****** 只读模式 ***** //
-    // // ******************** //
-
-    // // 移动 h j k l w e b
-    // {
-    //     "key": "h",
-    //     "command": "cursorLeft",
-    //     "when": "textInputFocus && editorReadonly"
-    // },
-    // {
-    //     "key": "l",
-    //     "command": "cursorRight",
-    //     "when": "textInputFocus && editorReadonly"
-    // },
-    // {
-    //     "key": "j",
-    //     "command": "cursorDown",
-    //     "when": "textInputFocus && editorReadonly"
-    // },
-    // {
-    //     "key": "k",
-    //     "command": "cursorUp",
-    //     "when": "textInputFocus && editorReadonly"
-    // },
-    // {
-    //     "key": "w",
-    //     "command": "cursorWordStartRight",
-    //     "when": "textInputFocus && !accessibilityModeEnabled && editorReadonly"
-    // },
-    // {
-    //     "key": "e",
-    //     "command": "cursorWordEndRight",
-    //     "when": "textInputFocus && !accessibilityModeEnabled && editorReadonly"
-    // },
-    // {
-    //     "key": "b",
-    //     "command": "cursorWordStartLeft",
-    //     "when": "textInputFocus && !accessibilityModeEnabled && editorReadonly"
-    // },
-
-    // // find
-    // {
-    //     "key": "/",
-    //     "command": "actions.find",
-    //     "when": "textInputFocus && editorReadonly"
-    // },
+        "when": "editorTextFocus && neovim.mode != 'insert'"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-vscode-neovim.send",
+        "when": "editorTextFocus && neovim.ctrlKeysNormal.s && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-vscode-neovim.send",
+        "when": "editorTextFocus && neovim.ctrlKeysInsert.s && neovim.init && neovim.mode == 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save",
+        "when": "editorTextFocus && neovim.mode != 'insert'"  // 普通模式
+    }
 ]

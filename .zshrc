@@ -108,13 +108,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ----- homebrew 代理设置
-# 1. 配置 brew 核心仓库镜像
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-# 2. 配置 brew cask 仓库镜像（用于安装桌面应用）
-export HOMEBREW_CASK_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git"
-# 3. 配置 brew 二进制包镜像（bottles）
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+# Homebrew 中科大镜像（USTC）
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_CASK_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-cask.git"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+
+proxy_on() {
+  export http_proxy="http://127.0.0.1:6152"
+  export https_proxy="http://127.0.0.1:6152"
+  export all_proxy="socks5://127.0.0.1:6153"
+  echo "✅ 代理已开启"
+}
+
+proxy_off() {
+  unset http_proxy https_proxy all_proxy
+  echo "❌ 代理已关闭"
+}
+
+# 查看当前代理状态
+proxy_status() {
+  echo "http_proxy: $http_proxy"
+  echo "https_proxy: $https_proxy"
+}
 
 # ----- fnm node版本管理
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+eval "$(starship init zsh)"
+
+stty -ixon

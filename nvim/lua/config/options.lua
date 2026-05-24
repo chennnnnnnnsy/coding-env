@@ -8,4 +8,3 @@ vim.opt.autoindent = true
 vim.opt.ignorecase = false
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
-vim.opt.background = "dark"
