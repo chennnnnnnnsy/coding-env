@@ -18,7 +18,9 @@
   "editor.minimap.enabled": false,
   "extensions.ignoreRecommendations": true,
   "editor.stickyScroll.enabled": false,
-  "workbench.editor.showTabs": "none",
+  // "workbench.editor.showTabs": "none",
   "workbench.layoutControl.enabled": false,
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "terminal.integrated.fontSize": 16
+
 }
