@@ -1,4 +1,16 @@
+// Place your key bindings in this file to override the defaults
 [
+  // 切换 vim 模式
+  {
+    "key": "alt+q",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "toggleVim"
+      ]
+    },
+    "when": "editorFocus"
+  },
   // ctrl + \ , 打开 terminal
   {
     "key": "ctrl+oem_5",
@@ -6,90 +18,60 @@
     "when": "terminal.active"
   },
   // 有弹窗建议选择时
-  //   {
-  //       "key": "ctrl+j",
-  //       "command": "workbench.action.quickOpenSelectNext",
-  //       "when": "inQuickOpen"
-  //   },
-  //   {
-  //       "key": "ctrl+k",
-  //       "command": "workbench.action.quickOpenSelectPrevious",
-  //       "when": "inQuickOpen"
-  //   },
-  //   {
-  //       "key": "ctrl+j",
-  //       "command": "selectNextSuggestion",
-  //       "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus" 
-  //   },
-  //   {
-  //       "key": "ctrl+k",
-  //       "command": "selectPrevSuggestion",
-  //       "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  //   },
-  //   {
-  //       "key": "ctrl+j",
-  //       "command": "selectNextCodeAction",
-  //       "when": "codeActionMenuVisible"
-  //   },
-  //   {
-  //       "key": "ctrl+k",
-  //       "command": "selectPrevCodeAction",
-  //       "when": "codeActionMenuVisible"
-  //   },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
   // 多光标多选相同的词
-  //   {
-  //       "key": "ctrl+n",
-  //       "command": "editor.action.addSelectionToNextFindMatch",
-  //       "when": "editorFocus"
-  //   },
+  {
+    "key": "ctrl+x",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
   {
     "command": "germanScroll.bertholdUp",
     "key": "ctrl+u",
-    "when": "editorTextFocus && neovim.mode == 'normal'"
+    "when": "vim.active && editorTextFocus && vim.mode == 'Normal'"
   },
   {
     "command": "germanScroll.bertholdDown",
     "key": "ctrl+d",
-    "when": "editorTextFocus && neovim.mode == 'normal'"
+    "when": "vim.active && editorTextFocus && vim.mode == 'Normal'"
   },
   {
-    "key": "ctrl+s",
-    "command": "-vscode-neovim.send",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.s && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    "key": "ctrl+j",
+    "command": "-quickInput.next",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
   },
   {
-    "key": "ctrl+s",
-    "command": "workbench.action.files.save",
-    "when": "editorTextFocus && neovim.mode == 'normal'" // 普通模式
-  },
-  {
-    "key": "space t t",
-    "command": "auto-i18n-tool.translate",
-    "when": "editorTextFocus && neovim.mode == 'visual'" // 可视模式
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-cursorDown",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "-vscode-neovim.send",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.p && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "-cursorUp",
-    "when": "textInputFocus"
-  },
-  {
-    "command": "workbench.action.nextEditor",
-    "key": "ctrl+n",
-    "when": "editorTextFocus && neovim.mode == 'normal' && !suggestWidgetVisible"
-  },
-  {
-    "command": "workbench.action.previousEditor",
-    "key": "ctrl+p",
-    "when": "editorTextFocus && neovim.mode == 'normal' && !suggestWidgetVisible"
-  },
+    "key": "ctrl+k",
+    "command": "-quickInput.previous",
+    "when": "inQuickInput && quickInputType == 'quickPick'"
+  }
 ]
