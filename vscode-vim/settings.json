@@ -65,6 +65,7 @@
     { "before": [ "<leader>", "g", "b" ], "commands": [ "git.checkout" ], "silent": true },
     { "before": [ "<leader>", "g", "H" ], "commands": [ "git.viewHistory" ], "silent": true },
     { "before": [ "<leader>", "g", "h" ], "commands": [ "git.viewFileHistory" ], "silent": true },
+    { "before": [ "<leader>", "b", "c" ], "commands": [ "workbench.action.closeOtherEditors" ], "silent": true },
   ],
   "vim.insertModeKeyBindings": [],
   "vim.visualModeKeyBindings": [
