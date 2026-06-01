@@ -1,0 +1,7 @@
+font-family = CodeNewRoman Nerd Font Mono
+font-size = 14
+adjust-cell-height = 16%
+
+# ghostty-theme-mixer
+theme = Gruvbox Material Dark
+background = 242323
