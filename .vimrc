@@ -49,20 +49,20 @@ var lspOpts = {
   autoHighlight: true,
   showSignature: false,
   noNewlineInCompletion: true,
-  showInlayHints: false,
+  showInlayHints: true,
 }
 
 var lspServers = [
   {
     name: 'tsserver',
     filetype: ['javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'vue'],
-    path: '/usr/local/bin/typescript-language-server',
+    path: '/opt/homebrew/bin/typescript-language-server',
     args: ['--stdio'],
     initializationOptions: {
       plugins: [
         {
           name: '@vue/typescript-plugin',
-          location: '/Users/chensy/.config/yarn/global/node_modules/@vue/typescript-plugin',
+          location: '/Users/ex_lincx4/.config/yarn/global/node_modules/@vue/typescript-plugin',
           languages: ['vue'],
         }
       ]
@@ -71,7 +71,7 @@ var lspServers = [
   {
     name: 'vue_ls',
     filetype: ['vue'],
-    path: '/usr/local/bin/vue-language-server',
+    path: '/opt/homebrew/bin/vue-language-server',
     args: ['--stdio'],
   }
 ]
@@ -104,19 +104,19 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 
-# nnoremap g[ <Cmd>LspDiag prev<CR> # 上一个诊断
-# nnoremap g] <Cmd>LspDiag next<CR> # 下一个诊断
-nnoremap gr <Cmd>LspPeekReferences<CR> # 查看引用
-nnoremap gR <Cmd>LspRename<CR> # 重命名
-nnoremap gd <Cmd>LspGotoDefinition<CR> # 跳转到定义
-nnoremap gD <Cmd>LspGotoTypeDef<CR> # 跳转到类型定义
-nnoremap gi <Cmd>LspGotoImpl<CR> # 跳转到实现
-nnoremap gI <Cmd>LspGotoDeclaration<CR> # 跳转到声明
-nnoremap <leader>d <Cmd>close<CR> # 关闭当前窗口
-nnoremap <leader>p <Cmd>echo expand('%')<CR> # 打印当前文件路径
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>" # 补全
-nnoremap <leader>lk <Cmd>LspHover<CR> # 显示悬浮提示
-vnoremap <leader>lk <Cmd>LspHover<CR> # 显示悬浮提示
-vnoremap <leader>lf <Cmd>LspFormat<CR> # 格式化
-nnoremap <leader>lf <Cmd>LspFormat<CR> # 格式化
-nnoremap <leader>la <Cmd>LspCodeAction<CR> # 代码动作
+nnoremap [d <Cmd>LspDiag prev<CR> 
+nnoremap ]d <Cmd>LspDiag next<CR> 
+nnoremap gr <Cmd>LspPeekReferences<CR>
+nnoremap cd <Cmd>LspRename<CR>
+nnoremap gd <Cmd>LspGotoDefinition<CR>
+nnoremap gD <Cmd>LspGotoDeclaration<CR> 
+nnoremap gy <Cmd>LspGotoTypeDef<CR>
+nnoremap gI <Cmd>LspGotoImpl<CR>
+nnoremap <leader>d <Cmd>close<CR>
+# nnoremap <leader>p <Cmd>echo expand('%')<CR>
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+nnoremap <leader>lk <Cmd>LspHover<CR>
+vnoremap <leader>lk <Cmd>LspHover<CR>
+vnoremap <leader>lf <Cmd>LspFormat<CR>
+nnoremap <leader>lf <Cmd>LspFormat<CR>
+nnoremap <leader>la <Cmd>LspCodeAction<CR>

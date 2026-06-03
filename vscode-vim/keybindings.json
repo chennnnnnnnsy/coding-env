@@ -50,7 +50,7 @@
   },
   // 多光标多选相同的词
   {
-    "key": "ctrl+x",
+    "key": "ctrl+g",
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "editorFocus"
   },
