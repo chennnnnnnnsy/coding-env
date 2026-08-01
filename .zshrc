@@ -20,9 +20,9 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 
 proxy_on() {
-  export http_proxy="http://127.0.0.1:6152"
-  export https_proxy="http://127.0.0.1:6152"
-  export all_proxy="socks5://127.0.0.1:6153"
+  export http_proxy="http://127.0.0.1:7892"
+  export https_proxy="http://127.0.0.1:7892"
+  export all_proxy="socks5://127.0.0.1:7892"
   echo "✅ 代理已开启"
 }
 
