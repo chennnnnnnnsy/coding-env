@@ -1,0 +1,65 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "threads_sidebar": {
+      "default_width": 150.0
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "agent_servers": {
+    "cursor": {
+      "default_config_options": {
+        "mode": "ask",
+        "model": "default"
+      },
+      "type": "registry"
+    }
+  },
+  "git_panel": {
+    "tree_view": false
+  },
+  "scrollbar": {
+    "diagnostics": "error"
+  },
+  "inline_code_actions": false,
+  "tabs": {
+    "git_status": false
+  },
+  "status_bar": {
+    "active_language_button": true
+  },
+  "project_panel": {
+    "button": true
+  },
+  "tab_size": 2,
+"vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "toolbar": {
+    "code_actions": false
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark",
+  },
+  "format_on_save": "off",
+  "ensure_final_newline_on_save": false,
+  "remove_trailing_whitespace_on_save": false
+}
